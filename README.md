@@ -1,2 +1,2 @@
 # LocadoraGrupo9
-Trabalho Prático Orientação por Objetos Grupo 9
+Trabalho Prático - Orientação Objetos Grupo 9
