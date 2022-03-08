@@ -8,3 +8,5 @@ Felipe Rodrigues de Oliveira - 190087048
 Luan Alves Barroso - 202023841
 
 Mário Vinícius Beleza Carneiro - 202046265
+
+Lucas Lopes Rocha - 202023903
