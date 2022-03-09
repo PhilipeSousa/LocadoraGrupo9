@@ -10,3 +10,5 @@ Luan Alves Barroso - 202023841
 Mário Vinícius Beleza Carneiro - 202046265
 
 Lucas Lopes Rocha - 202023903
+
+João Lucas Miranda de Sousa - 202016604
