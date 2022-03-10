@@ -19,37 +19,25 @@ public class App {
         String nome = JOptionPane.showInputDialog(null, "Digite o nome da Empresa");
         locadora.setNome(nome);
 
-        System.out.println("Locadora: " + locadora.getNome() + " de CNPJ: \n\n" +
-                "Menu Principal\n" +
-                "A) Gerenciar Locatários\n" +
-                "   Menu Gerência de Locatários:\n" +
-                "   A) Cadastrar Locatário\n" +
-                "   B) Buscar Locatário\n" +
-                "   C) Pesquisar Locatário\n" +
-                "   D) Excluir locatário\n" +
-
-                "B) Gerenciar Frota\n" +
-                "   Menu Gerência de Frotas:\n" +
-                "   A) Cadastrar veículos\n" +
-                "       Menu de Cadastro de Veículos:\n" +
-                "       A) Cadastrar veiculo de passeio\n" +
-                "       B) Cadastrar veículo utilitário\n" +
-                "       C) Cadastrar Motocicleta\n" +
-                "   B) Pesquisar Veículo\n" +
-                "      Menu de Pesquisa de Veículos:\n" +
-                "      A) Pesquisar veículo pelo Renavam\n" +
-                "      B) Pesquisar veículo por marca, modelo ou renavam\n" +
-                "   C) Atualizar dados de um veículo\n" +
-                "   D) Remover veículo da frota\n" +
-
-                "C) Gerenciar Reservas\n" +
-                "D) Sair do Programa\n");
-
         do {
+            JOptionPane.showMessageDialog(null, "Locadora: " + locadora.getNome() + " de CNPJ: \n\n" +
+                    "Menu Principal\n" +
+                    "A) Gerenciar Locatários\n" +
+                    "B) Gerenciar Frota\n" +
+                    "C) Gerenciar Reservas\n" +
+                    "D) Sair do Programa\n");
+
             escolha = JOptionPane.showInputDialog(null, "Sua primeira escolha:");
 
             switch (escolha.toUpperCase()) {
                 case "A": // GERENCIAR LOCATARIOS
+
+                    JOptionPane.showMessageDialog(null, "Menu Gerência de Locatários:\n" +
+                            "   A) Cadastrar Locatário\n" +
+                            "   B) Buscar Locatário\n" +
+                            "   C) Pesquisar Locatário\n" +
+                            "   D) Excluir locatário\n");
+
                     segundaEscolha = JOptionPane.showInputDialog(null, "Sua segunda escolha:");
 
                     switch (segundaEscolha.toUpperCase()) {
@@ -81,10 +69,23 @@ public class App {
                     break;
 
                 case "B": // GERENCIAR FROTA
+
+                    JOptionPane.showMessageDialog(null, "Menu Gerência de Frotas:\n" +
+                            "   A) Cadastrar veículos\n" +
+                            "   B) Pesquisar Veículo\n" +
+                            "   C) Atualizar dados de um veículo\n" +
+                            "   D) Remover veículo da frota\n");
+
                     segundaEscolha = JOptionPane.showInputDialog(null, "Sua segunda escolha:");
 
                     switch (segundaEscolha.toUpperCase()) {
                         case "A": // CADASTRAR VEICULO
+
+                            JOptionPane.showMessageDialog(null, "Menu de Cadastro de Veículos:\n" +
+                                    "   A) Cadastrar veiculo de passeio\n" +
+                                    "   B) Cadastrar veículo utilitário\n" +
+                                    "   C) Cadastrar Motocicleta\n");
+
                             terceiraEscolha = JOptionPane.showInputDialog(null, "Sua terceira escolha:");
 
                             switch (terceiraEscolha.toUpperCase()) {
@@ -107,6 +108,11 @@ public class App {
                             break;
 
                         case "B": // PESQUISAR VEICULO
+
+                            JOptionPane.showMessageDialog(null, "Menu de Pesquisa de Veículos:\n" +
+                                    "   A) Pesquisar veículo pelo Renavam\n" +
+                                    "   B) Pesquisar veículo por marca, modelo ou renavam\n");
+
                             terceiraEscolha = JOptionPane.showInputDialog(null, "Sua terceira escolha:");
 
                             switch (terceiraEscolha.toUpperCase()) {
