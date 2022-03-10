@@ -8,10 +8,16 @@ André Luiz Peron Martins Lanna
 
 Alunos:
 Philipe de Sousa Barros - 170154319
+
 Felipe Rodrigues de Oliveira - 190087048
+
 Luan Alves Barroso - 202023841
+
 Mário Vinícius Beleza Carneiro - 202046265
+
 Lucas Lopes Rocha - 202023903
+
 João Lucas Miranda de Sousa - 202016604
+
 
 # 1ª Entrega:
