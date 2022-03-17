@@ -1,33 +1,29 @@
 package gerenciaLocatorios;
 
-public class PessoaFisica {
-    // FALTA HERDAR LOCATARIO
+public class PessoaFisica extends Locatorio {
     private String nomeCompleto;
     private String cpf;
     private String estadoCivil;
 
-    public String getNomeCompleto() {
-        return nomeCompleto;
+    public PessoaFisica(String celular, String email, String logradouro, String numero, String complemento,
+            String bairro, String cidade, String cep, String nomeCompleto, String cpf, String estadoCivil) {
+
+        super(celular, email, logradouro, numero, complemento, bairro, cidade, cep);
+        this.nomeCompleto = nomeCompleto;
+        this.cpf = cpf;
+        this.estadoCivil = estadoCivil;
     }
 
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEstadoCivil() {
         return estadoCivil;
-    }
-
-    public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
     }
 
 }

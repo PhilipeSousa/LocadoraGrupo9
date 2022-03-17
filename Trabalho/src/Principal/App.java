@@ -8,24 +8,35 @@ import gerenciaLocatorios.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
-
-        String escolha, segundaEscolha, terceiraEscolha;
+        /////////////////////////////////// VARIAVEIS ///////////////////////////
+        String escolha, segundaEscolha, terceiraEscolha, celular, email, logradouro, complemento, bairro, cidade, cep,
+                numero;
+        int i = 0;
 
         /////////////////////////////////// INSTANCIACAO ///////////////////////////
-        Locadora locadora = new Locadora();
-        Locatorio locatorio = new Locatorio();
+        Locatorio[] locatorio = new Locatorio[99];
 
         /////////////////////////////////// MENU ///////////////////////////////////
         String nome = JOptionPane.showInputDialog(null, "Digite o nome da Empresa");
-        locadora.setNome(nome);
+        int prefixo1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o primeiro prefixo do CNPJ"));
+        int prefixo2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o segundo prefixo do CNPJ"));
+        int prefixo3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o terceiro prefixo do CNPJ"));
+        int sufixo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o sufixo do CNPJ"));
+
+        /* INSTANCIACAO */
+        Locadora locadora = new Locadora(nome, prefixo1, prefixo2, prefixo3, sufixo);
+        // Cnpj cnpj = new Cnpj(prefixo1, prefixo2, prefixo3, sufixo);
+        // Colocar LOCADORA como main??
 
         do {
-            JOptionPane.showMessageDialog(null, "Locadora: " + locadora.getNome() + " de CNPJ: \n\n" +
-                    "Menu Principal\n" +
-                    "A) Gerenciar Locatários\n" +
-                    "B) Gerenciar Frota\n" +
-                    "C) Gerenciar Reservas\n" +
-                    "D) Sair do Programa\n");
+            JOptionPane.showMessageDialog(null,
+                    "Locadora: " + locadora.getNome() + " de CNPJ: "
+                            + locadora.printarCnpj(prefixo1, prefixo2, prefixo3, sufixo) + "\n\n" +
+                            "Menu Principal\n" +
+                            "A) Gerenciar Locatários\n" +
+                            "B) Gerenciar Frota\n" +
+                            "C) Gerenciar Reservas\n" +
+                            "D) Sair do Programa\n");
 
             escolha = JOptionPane.showInputDialog(null, "Sua primeira escolha:");
 
@@ -43,11 +54,22 @@ public class App {
                     switch (segundaEscolha.toUpperCase()) {
                         case "A":
                             // CADASTRAR LOCATARIO
-                            String email = JOptionPane.showInputDialog(null, "Digite o email");
-                            String celular = JOptionPane.showInputDialog(null, "Digite o celular");
-                            locatorio.setEmail(email);
-                            locatorio.setCelular(celular);
-                            locatorio.printar(); // ****So teste pode apagar****
+                            // ****SO TESTE, PODE APAGAR****
+                            email = JOptionPane.showInputDialog(null, "Digite o email");
+                            celular = JOptionPane.showInputDialog(null, "Digite o celular");
+                            logradouro = JOptionPane.showInputDialog(null,
+                                    "    //////ENDERECO//////\nDigite o logradouro");
+                            numero = JOptionPane.showInputDialog(null, "Digite o numero");
+                            complemento = JOptionPane.showInputDialog(null, "Digite o complemento");
+                            bairro = JOptionPane.showInputDialog(null, "Digite o bairro");
+                            cidade = JOptionPane.showInputDialog(null, "Digite o cidade");
+                            cep = JOptionPane.showInputDialog(null, "Digite o cep");
+                            /* INSTANCIACAO */
+                            locatorio[i] = new Locatorio(celular, email, logradouro, numero, complemento, bairro,
+                                    cidade, cep);
+                            locatorio[i].printar();
+                            i++;
+
                             break;
 
                         case "B":
@@ -158,7 +180,7 @@ public class App {
                     break;
             }
 
-        } while (escolha != "D");
+        } while (escolha.toUpperCase() != "D");
 
     }
 }
