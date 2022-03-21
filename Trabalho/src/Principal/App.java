@@ -185,11 +185,9 @@ public class App {
 		
 	}
 
-
 	private static void emitirRelatorio() {
 		
 	}
-
 
 	private static void excluirVeiculo() {
 		
