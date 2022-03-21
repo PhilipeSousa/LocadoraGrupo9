@@ -54,34 +54,22 @@ public class App {
                     switch (segundaEscolha.toUpperCase()) {
                         case "A":
                             // CADASTRAR LOCATARIO
-                            // ****SO TESTE, PODE APAGAR****
-                            email = JOptionPane.showInputDialog(null, "Digite o email");
-                            celular = JOptionPane.showInputDialog(null, "Digite o celular");
-                            logradouro = JOptionPane.showInputDialog(null,
-                                    "    //////ENDERECO//////\nDigite o logradouro");
-                            numero = JOptionPane.showInputDialog(null, "Digite o numero");
-                            complemento = JOptionPane.showInputDialog(null, "Digite o complemento");
-                            bairro = JOptionPane.showInputDialog(null, "Digite o bairro");
-                            cidade = JOptionPane.showInputDialog(null, "Digite o cidade");
-                            cep = JOptionPane.showInputDialog(null, "Digite o cep");
-                            /* INSTANCIACAO */
-                            locatorio[i] = new Locatorio(celular, email, logradouro, numero, complemento, bairro,
-                                    cidade, cep);
-                            locatorio[i].printar();
-                            i++;
-
+                        	 cadastrarLocatario();
                             break;
 
                         case "B":
                             // BUSCAR LOCATARIO
+                        	 filtroDeBusca();
                             break;
 
                         case "C":
                             // PESQUISAR LOCATARIO
+                        	pesquisarLocatarioNome();
                             break;
 
                         case "D":
                             // EXCLUIR LOCATARIO
+                        	excluirLocatario();
 
                             break;
 
@@ -113,15 +101,17 @@ public class App {
                             switch (terceiraEscolha.toUpperCase()) {
                                 case "A":
                                     // CADASTRAR VEICULO PASSEIO
-
+                                	cadastrarVeiculo();
                                     break;
 
                                 case "B":
                                     // CADASTRAR VEICULO UTILITARIO
+                                	cadastrarVeiculo();
                                     break;
 
                                 case "C":
                                     // CADASTRAR MOTOCICLETA
+                                	cadastrarVeiculo();
                                     break;
 
                                 default:
@@ -140,11 +130,13 @@ public class App {
                             switch (terceiraEscolha.toUpperCase()) {
                                 case "A":
                                     // PESQUISAR VEICULO PELO RENAVAM
+                                	pesquisarRENAVAN();
 
                                     break;
 
                                 case "B":
                                     // PESQUISARA VEICULO POR MARCA, MODELO OU RENAVAM
+                                	pesquisarMMR();
                                     break;
 
                                 default:
@@ -154,10 +146,12 @@ public class App {
 
                         case "C":
                             // ATUALIZAR DADOS DE UM VEICULO
+                        	editarDadosVeiculo();
                             break;
 
                         case "D":
                             // REMOVER VEICULOS DA FROTA
+                        	excluirVeiculo();
 
                             break;
 
@@ -168,6 +162,8 @@ public class App {
 
                 case "C":
                     // GERENCIAR RESERVAS
+                	 emitirRelatorio();
+                	 emitirRelatorioConsolidado();
 
                     break;
 
@@ -183,4 +179,58 @@ public class App {
         } while (escolha.toUpperCase() != "D");
 
     }
+
+
+	private static void emitirRelatorioConsolidado() {
+		
+	}
+
+
+	private static void emitirRelatorio() {
+		
+	}
+
+
+	private static void excluirVeiculo() {
+		
+	}
+
+
+	private static void editarDadosVeiculo() {	
+		
+	}
+
+
+	private static void pesquisarRENAVAN() {
+		
+	}
+
+
+	private static void pesquisarMMR() {
+		
+	}
+
+
+	private static void cadastrarVeiculo() {
+		
+		
+	}
+
+
+	private static void excluirLocatario() {
+		
+	}
+
+	private static void pesquisarLocatarioNome() {
+	
+	}
+
+	private static void filtroDeBusca() {
+		
+		
+	}
+
+	private static void cadastrarLocatario() {
+		
+	}
 }
