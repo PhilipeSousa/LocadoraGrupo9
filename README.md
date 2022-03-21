@@ -21,5 +21,3 @@ Lucas Lopes Rocha - 202023903
 
 João Lucas Miranda de Sousa - 202016604
 
-
-# 1ª Entrega:
