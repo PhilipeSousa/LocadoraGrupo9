@@ -2,233 +2,211 @@ package Principal;
 
 import javax.swing.JOptionPane;
 
-import gerenciaLocatorios.*;
-//import gerenciaReservas.*;
+import gerenciaLocatarios.*;
 //import gerenciaFrota.*;
+//import gerenciaReservas.*;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-        /////////////////////////////////// VARIAVEIS ///////////////////////////
-        String escolha, segundaEscolha, terceiraEscolha, celular, email, logradouro, complemento, bairro, cidade, cep,
-                numero;
-        int i = 0;
+    public static void main(String[] args) {
+        char opcao = 'D', opcao1 = 'E', opcao2 = 'D', opcao3 = 'D', opcao4 = 'C';
 
         /////////////////////////////////// INSTANCIACAO ///////////////////////////
-        Locatorio[] locatorio = new Locatorio[99];
+
+        Locatario[] locatario = new Locatario[99];
+        // Instanciar reservas
+        // Instanciar veiculos
 
         /////////////////////////////////// MENU ///////////////////////////////////
-        String nome = JOptionPane.showInputDialog(null, "Digite o nome da Empresa");
-        int prefixo1 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o primeiro prefixo do CNPJ"));
-        int prefixo2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o segundo prefixo do CNPJ"));
-        int prefixo3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o terceiro prefixo do CNPJ"));
-        int sufixo = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o sufixo do CNPJ"));
 
-        /* INSTANCIACAO */
-        Locadora locadora = new Locadora(nome, prefixo1, prefixo2, prefixo3, sufixo);
-        // Cnpj cnpj = new Cnpj(prefixo1, prefixo2, prefixo3, sufixo);
-        // Colocar LOCADORA como main??
+        do {// Menu Principal
+            opcao = menuPrincipal();
+            switch (opcao) {
+                case 'A': {// Menu Gerencia Locatario
 
-        do {
-            JOptionPane.showMessageDialog(null,
-                    "Locadora: " + locadora.getNome() + " de CNPJ: "
-                            + locadora.printarCnpj(prefixo1, prefixo2, prefixo3, sufixo) + "\n\n" +
-                            "Menu Principal\n" +
-                            "A) Gerenciar Locatários\n" +
-                            "B) Gerenciar Frota\n" +
-                            "C) Gerenciar Reservas\n" +
-                            "D) Sair do Programa\n");
-
-            escolha = JOptionPane.showInputDialog(null, "Sua primeira escolha:");
-
-            switch (escolha.toUpperCase()) {
-                case "A": // GERENCIAR LOCATARIOS
-
-                    JOptionPane.showMessageDialog(null, "Menu Gerência de Locatários:\n" +
-                            "   A) Cadastrar Locatário\n" +
-                            "   B) Buscar Locatário\n" +
-                            "   C) Pesquisar Locatário\n" +
-                            "   D) Excluir locatário\n");
-
-                    segundaEscolha = JOptionPane.showInputDialog(null, "Sua segunda escolha:");
-
-                    switch (segundaEscolha.toUpperCase()) {
-                        case "A":
-                            // CADASTRAR LOCATARIO
-                        	 cadastrarLocatario();
-                            break;
-
-                        case "B":
-                            // BUSCAR LOCATARIO
-                        	 filtroDeBusca();
-                            break;
-
-                        case "C":
-                            // PESQUISAR LOCATARIO
-                        	pesquisarLocatarioNome();
-                            break;
-
-                        case "D":
-                            // EXCLUIR LOCATARIO
-                        	excluirLocatario();
-
-                            break;
-
-                        default:
-                            break;
-                    }
-                    break;
-
-                case "B": // GERENCIAR FROTA
-
-                    JOptionPane.showMessageDialog(null, "Menu Gerência de Frotas:\n" +
-                            "   A) Cadastrar veículos\n" +
-                            "   B) Pesquisar Veículo\n" +
-                            "   C) Atualizar dados de um veículo\n" +
-                            "   D) Remover veículo da frota\n");
-
-                    segundaEscolha = JOptionPane.showInputDialog(null, "Sua segunda escolha:");
-
-                    switch (segundaEscolha.toUpperCase()) {
-                        case "A": // CADASTRAR VEICULO
-
-                            JOptionPane.showMessageDialog(null, "Menu de Cadastro de Veículos:\n" +
-                                    "   A) Cadastrar veiculo de passeio\n" +
-                                    "   B) Cadastrar veículo utilitário\n" +
-                                    "   C) Cadastrar Motocicleta\n");
-
-                            terceiraEscolha = JOptionPane.showInputDialog(null, "Sua terceira escolha:");
-
-                            switch (terceiraEscolha.toUpperCase()) {
-                                case "A":
-                                    // CADASTRAR VEICULO PASSEIO
-                                	cadastrarVeiculo();
-                                    break;
-
-                                case "B":
-                                    // CADASTRAR VEICULO UTILITARIO
-                                	cadastrarVeiculo();
-                                    break;
-
-                                case "C":
-                                    // CADASTRAR MOTOCICLETA
-                                	cadastrarVeiculo();
-                                    break;
-
-                                default:
-                                    break;
+                    do {
+                        opcao1 = menuGerenciaLocatario();
+                        switch (opcao1) {
+                            case 'A': { // Cadastrar locat�rio
+                                // Locatario.cadastrarPessoaFisica();
+                                break;
                             }
-                            break;
-
-                        case "B": // PESQUISAR VEICULO
-
-                            JOptionPane.showMessageDialog(null, "Menu de Pesquisa de Veículos:\n" +
-                                    "   A) Pesquisar veículo pelo Renavam\n" +
-                                    "   B) Pesquisar veículo por marca, modelo ou renavam\n");
-
-                            terceiraEscolha = JOptionPane.showInputDialog(null, "Sua terceira escolha:");
-
-                            switch (terceiraEscolha.toUpperCase()) {
-                                case "A":
-                                    // PESQUISAR VEICULO PELO RENAVAM
-                                	pesquisarRENAVAN();
-
-                                    break;
-
-                                case "B":
-                                    // PESQUISARA VEICULO POR MARCA, MODELO OU RENAVAM
-                                	pesquisarMMR();
-                                    break;
-
-                                default:
-                                    break;
+                            case 'B': { // Buscar locat�rio
+                                // Locatario.alterarLocatario();
+                                break;
                             }
-                            break;
-
-                        case "C":
-                            // ATUALIZAR DADOS DE UM VEICULO
-                        	editarDadosVeiculo();
-                            break;
-
-                        case "D":
-                            // REMOVER VEICULOS DA FROTA
-                        	excluirVeiculo();
-
-                            break;
-
-                        default:
-                            break;
-                    }
+                            case 'C': { // Pesquisar locat�rio
+                                // Locatario.pesquisarLocatario();
+                                break;
+                            }
+                            case 'D': { // Remover locat�rio
+                                // Locatario.removerLocatario();
+                                break;
+                            }
+                            case 'E': { // Retornar ao menu anterior
+                                break;
+                            }
+                            default:
+                                JOptionPane.showMessageDialog(null, "Op��o inv�lida!");
+                                opcao1 = 'I';
+                        }
+                    } while (opcao1 != 'E');
                     break;
+                }
 
-                case "C":
-                    // GERENCIAR RESERVAS
-                	 emitirRelatorio();
-                	 emitirRelatorioConsolidado();
+                case 'B': {// Gerencia frota
+                    do {
+                        opcao2 = menuGerenciaFrota();
+                        switch (opcao2) {
+                            case 'A': { // Cadastrar ve�culos
+                                do {
+                                    opcao3 = menuCadastroVeiculos();
+                                    switch (opcao3) {
+                                        case 'A': { // Cadastrar veiculo de passeio
+                                            // Veiculos.cadastrarVeiculoPasseio();
+                                            break;
+                                        }
 
+                                        case 'B': { // Cadastrar ve�culo utilit�rio
+                                            // Veiculos.cadastrarVeiculosUtilitarios();
+                                            break;
+                                        }
+
+                                        case 'C': { // Cadastrar motocicleta
+                                            // Veiculos.cadastrarMotocicleta();
+                                            break;
+                                        }
+
+                                        case 'D': { // Retornar o menu anterior
+                                            break;
+                                        }
+
+                                        default:
+                                            JOptionPane.showMessageDialog(null, "Op��o inv�lida!");
+                                            opcao2 = 'I';
+                                    }
+
+                                } while (opcao3 != 'D');
+                                break;
+                            }
+
+                            case 'B': { // Pesquisar ve�culo
+                                do {
+                                    opcao4 = menuPesquisaVeiculo();
+                                    switch (opcao4) {
+                                        case 'A': { // Pesquisar pelo Renavam
+                                            // Veiculos.pesquisarVeiculosRenavam();
+                                            break;
+                                        }
+                                        case 'B': { // Pesquisar ve�culo por marca, modelo ou renavam
+                                            // Veiculos.pesquisarVeiculosMarcaModeloRen();
+                                            break;
+                                        }
+                                        case 'C': { // Retornar ao menu anterior
+                                            break;
+                                        }
+                                        default:
+                                            JOptionPane.showMessageDialog(null, "Op��o inv�lida!");
+                                            opcao2 = 'I';
+                                    }
+                                } while (opcao4 != 'C');
+                                break;
+                            }
+
+                            case 'C': { // Atualizar dados de um ve�culo
+                                break;
+                            }
+
+                            case 'D': { // Remover ve�culo da frota
+                                break;
+                            }
+
+                            case 'E': { // Retornar ao menu anterior
+                                break;
+                            }
+                            default:
+                                JOptionPane.showMessageDialog(null, "Op��o inv�lida!");
+                                opcao2 = 'I';
+                        }
+                    } while (opcao2 != 'E');
                     break;
+                }
 
-                case "D":
-                    // SAIR DO PROGRAMA
-                    System.exit(0);
+                case 'C': { // Gerenciar Reservas
                     break;
+                }
+
+                case 'D': { // Sair do Programa
+                    break;
+                }
 
                 default:
-                    break;
+                    JOptionPane.showMessageDialog(null, "Op��o inv�lida!");
+                    opcao = 'W';
             }
-
-        } while (escolha.toUpperCase() != "D");
-
+        } while (opcao != 'D');
     }
 
+    private static char menuPrincipal() {
+        char opcao = 'D';
+        String menu = "Menu Principal \n"
+                + "A) Gerenciar Locat�rios \n"
+                + "B) Gerenciar Frota \n"
+                + "C) Gerenciar Reservas \n"
+                + "D) Sair do Programa";
+        String strOpcao = JOptionPane.showInputDialog(menu);
+        opcao = strOpcao.charAt(0);
+        return opcao;
+    }
 
-	private static void emitirRelatorioConsolidado() {
-		
-	}
+    private static char menuGerenciaLocatario() {
+        char opcao1 = 'E';
+        String menu = "Menu Ger�ncia de Locat�rios \n"
+                + "A) Cadastrar Locat�rio \n"
+                + "B) Buscar Locat�rio \n"
+                + "C) Pesquisar Locat�rio \n"
+                + "D) Excluir Locat�rio \n"
+                + "E) Retornar ao menu anterior";
 
-	private static void emitirRelatorio() {
-		
-	}
+        String strOpcao1 = JOptionPane.showInputDialog(menu);
+        opcao1 = strOpcao1.charAt(0);
+        return opcao1;
+    }
 
-	private static void excluirVeiculo() {
-		
-	}
+    private static char menuGerenciaFrota() {
+        char opcao2 = 'E';
+        String menu = "Menu Ger�ncia de Frotas \n"
+                + "A) Cadastrar ve�culos \n"
+                + "B) Pesquisar ve�culo\n"
+                + "C) Atualizar dados de um ve�culo \n"
+                + "D) Remover ve�culos da frota \n"
+                + "E) Retornar ao menu anterior";
+        String strOpcao2 = JOptionPane.showInputDialog(menu);
+        opcao2 = strOpcao2.charAt(0);
+        return opcao2;
+    }
 
+    private static char menuCadastroVeiculos() {
+        char opcao3 = 'D';
+        String menu = "Menu de Cadastro de Ve�culos \n"
+                + "A) Cadastrar ve�culo de passeio \n"
+                + "B) Cadastrar ve�culo utilit�rio \n"
+                + "C) Cadastrar motocicleta \n"
+                + "D) Retornar ao menu anterior";
 
-	private static void editarDadosVeiculo() {	
-		
-	}
+        String strOpcao3 = JOptionPane.showInputDialog(menu);
+        opcao3 = strOpcao3.charAt(0);
+        return opcao3;
+    }
 
+    private static char menuPesquisaVeiculo() {
+        char opcao4 = 'C';
+        String menu = "Menu de Pesquisa de Ve�culos \n"
+                + "A) Pesquisar ve�culo pelo Renavam \n"
+                + "B) Pesquisar ve�culo por marca, modelo ou renavam \n"
+                + "C) Retornar ao menu anterior";
 
-	private static void pesquisarRENAVAN() {
-		
-	}
-
-
-	private static void pesquisarMMR() {
-		
-	}
-
-
-	private static void cadastrarVeiculo() {
-		
-		
-	}
-
-
-	private static void excluirLocatario() {
-		
-	}
-
-	private static void pesquisarLocatarioNome() {
-	
-	}
-
-	private static void filtroDeBusca() {
-		
-		
-	}
-
-	private static void cadastrarLocatario() {
-		
-	}
+        String strOpcao4 = JOptionPane.showInputDialog(menu);
+        opcao4 = strOpcao4.charAt(0);
+        return opcao4;
+    }
 }

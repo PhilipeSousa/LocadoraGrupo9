@@ -1,14 +1,14 @@
-package gerenciaLocatorios;
+package gerenciaLocatarios;
 
 public class Endereco {
     private String logradouro;
-    private String numero;
+    private int numero;
     private String complemento;
     private String bairro;
     private String cidade;
     private String cep;
 
-    public Endereco(String logradouro, String numero, String complemento, String bairro, String cidade, String cep) {
+    public Endereco(String logradouro, int numero, String complemento, String bairro, String cidade, String cep) {
         this.logradouro = logradouro;
         this.numero = numero;
         this.complemento = complemento;
@@ -21,7 +21,7 @@ public class Endereco {
         return logradouro;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 

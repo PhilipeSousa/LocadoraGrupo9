@@ -1,8 +1,8 @@
-package gerenciaLocatorios;
+package gerenciaLocatarios;
 
 import Principal.Cnpj;
 
-public class PessoaJuridica extends Locatorio {
+public class PessoaJuridica extends Locatario {
     // FALTA RESOLVER **FUNCIONARIOS
     private PessoaFisica[] funcionarios = new PessoaFisica[99];
 
@@ -11,7 +11,7 @@ public class PessoaJuridica extends Locatorio {
 
     private String razaoSocial;
 
-    public PessoaJuridica(String celular, String email, String logradouro, String numero, String complemento,
+    public PessoaJuridica(String celular, String email, String logradouro, int numero, String complemento,
             String bairro, String cidade, String cep, String razaoSocial, int prefixo1, int prefixo2, int prefixo3,
             int sufixo) {
 
@@ -32,7 +32,7 @@ public class PessoaJuridica extends Locatorio {
         return razaoSocial;
     }
 
-    public void cadastrarFuncionario() {
+    public void cadastrarFuncionario(PessoaFisica pf) {
 
     }
 }

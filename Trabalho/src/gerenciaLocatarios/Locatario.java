@@ -1,9 +1,9 @@
-package gerenciaLocatorios;
+package gerenciaLocatarios;
 
-public class Locatorio {
+public class Locatario {
 
     private String logradouro;
-    private String numero;
+    private int numero;
     private String complemento;
     private String bairro;
     private String cidade;
@@ -14,7 +14,7 @@ public class Locatorio {
     private String celular;
     private String email;
 
-    public Locatorio(String celular, String email, String logradouro, String numero, String complemento, String bairro,
+    public Locatario(String celular, String email, String logradouro, int numero, String complemento, String bairro,
             String cidade, String cep) {
         this.celular = celular;
         this.email = email;
@@ -36,11 +36,6 @@ public class Locatorio {
 
         this.cep = endereco.getCep();
         this.cep = cep;
-    }
-
-    public void printar() { // ****SO TESTE, PODE APAGAR****
-        System.out.println("Cadastro de " + this.getCelular() + " " + this.getEmail()
-                + " efetuado com sucesso. Endereco:" + logradouro + numero + complemento + bairro + cidade + cep);
     }
 
     public String getEmail() {

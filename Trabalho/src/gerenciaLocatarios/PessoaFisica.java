@@ -1,11 +1,11 @@
-package gerenciaLocatorios;
+package gerenciaLocatarios;
 
-public class PessoaFisica extends Locatorio {
+public class PessoaFisica extends Locatario {
     private String nomeCompleto;
     private String cpf;
     private String estadoCivil;
 
-    public PessoaFisica(String celular, String email, String logradouro, String numero, String complemento,
+    public PessoaFisica(String celular, String email, String logradouro, int numero, String complemento,
             String bairro, String cidade, String cep, String nomeCompleto, String cpf, String estadoCivil) {
 
         super(celular, email, logradouro, numero, complemento, bairro, cidade, cep);
