@@ -3,13 +3,13 @@ package gerenciaLocatarios;
 import Principal.Cnpj;
 
 public class PessoaJuridica extends Locatario {
-    // FALTA RESOLVER **FUNCIONARIOS
-    private PessoaFisica[] funcionarios = new PessoaFisica[99];
+    
+     PessoaFisica[] funcionarios = new PessoaFisica[99];
 
-    private int prefixo1, prefixo2, prefixo3, sufixo;
-    private Cnpj cnpj = new Cnpj(prefixo1, prefixo2, prefixo3, sufixo);
+     int prefixo1, prefixo2, prefixo3, sufixo;
+     Cnpj cnpj = new Cnpj(prefixo1, prefixo2, prefixo3, sufixo);
 
-    private String razaoSocial;
+     String razaoSocial;
 
     public PessoaJuridica(String celular, String email, String logradouro, int numero, String complemento,
             String bairro, String cidade, String cep, String razaoSocial, int prefixo1, int prefixo2, int prefixo3,
