@@ -2,17 +2,17 @@ package gerenciaLocatarios;
 
 public class Locatario {
 
-    private String logradouro;
-    private int numero;
-    private String complemento;
-    private String bairro;
-    private String cidade;
-    private String cep;
+     String logradouro;
+     int numero;
+     String complemento;
+     String bairro;
+     String cidade;
+     String cep;
 
-    private Endereco endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, cep);
+     Endereco endereco = new Endereco(logradouro, numero, complemento, bairro, cidade, cep);
 
-    private String celular;
-    private String email;
+     String celular;
+     String email;
 
     public Locatario(String celular, String email, String logradouro, int numero, String complemento, String bairro,
             String cidade, String cep) {
