@@ -7,7 +7,7 @@ Professor:
 
 André Luiz Peron Martins Lanna
 
-###Alunos:
+Alunos:
 
 |Nome|Matrícula|
 | -------- | -------- |
