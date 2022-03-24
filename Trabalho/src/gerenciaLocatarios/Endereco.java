@@ -1,44 +1,77 @@
-package gerenciaLocatarios;
+package GerenciadorLocatario;
 
 public class Endereco {
-     String logradouro;
-     int numero;
-     String complemento;
-     String bairro;
-     String cidade;
-     String cep;
+	String cidade,
+	estado,
+	rua, 
+	numero,
+	complemento,
+	bairro,
+	cep;
+	
+	public Endereco (String cid, String est, String r, String n, String comp, String ba, String ce) {
+		this.cidade = cid;
+		this.estado = est;
+		this.rua = r;
+		this.numero = n;
+		this.complemento = comp;
+		this.bairro = ba;
+		this.cep = ce;
+	}
 
-    public Endereco(String logradouro, int numero, String complemento, String bairro, String cidade, String cep) {
-        this.logradouro = logradouro;
-        this.numero = numero;
-        this.complemento = complemento;
-        this.bairro = bairro;
-        this.cidade = cidade;
-        this.cep = cep;
-    }
+	public String getRua() {
+		return rua;
+	}
 
-    public String getLogradouro() {
-        return logradouro;
-    }
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
 
-    public int getNumero() {
-        return numero;
-    }
+	public String getNumero() {
+		return numero;
+	}
 
-    public String getComplemento() {
-        return complemento;
-    }
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
 
-    public String getBairro() {
-        return bairro;
-    }
+	public String getComplemento() {
+		return complemento;
+	}
 
-    public String getCidade() {
-        return cidade;
-    }
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
 
-    public String getCep() {
-        return cep;
-    }
+	public String getCidade() {
+		return cidade;
+	}
 
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
 }
