@@ -1,9 +1,9 @@
 package gerenciaLocatarios;
 
 public class PessoaFisica extends Locatario {
-    private String nomeCompleto;
-    private String cpf;
-    private String estadoCivil;
+     String nomeCompleto;
+     String cpf;
+     String estadoCivil;
 
     public PessoaFisica(String celular, String email, String logradouro, int numero, String complemento,
             String bairro, String cidade, String cep, String nomeCompleto, String cpf, String estadoCivil) {
