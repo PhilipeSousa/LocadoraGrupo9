@@ -21,6 +21,7 @@ João Lucas Miranda de Sousa - 202016604
 
 # 1ª Entrega
 Diagrama UML de classes:
+
 Diagrama UML de objetos:
 
 Obs.: Apenas por questões de teste alguns métodos do projeto estão implementados, porém estão comentados no código na sua versão final para a primeira entrega 
