@@ -49,13 +49,13 @@ public class Reserva {
 	}
 
 	private static void cadastrarReserva(Reserva re) {
-		Reserva[] temp = new Reserva[res.length + 1];
+		/*Reserva[] temp = new Reserva[res.length + 1];
 		for (int i = 0; i < res.length; i++) {
 			temp[i] = res[i];
 		}
 		temp[res.length] = re;
 		res = temp;
 		JOptionPane.showMessageDialog(null, "Reserva efetivada!");
-	}
+	}*/
 
 }
