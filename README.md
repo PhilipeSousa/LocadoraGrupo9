@@ -20,8 +20,8 @@ Lucas Lopes Rocha - 202023903
 João Lucas Miranda de Sousa - 202016604
 
 # 1ª Entrega
-Diagrama UML de classes:
+Diagrama UML de classes: https://app.diagrams.net/#G1-GolP36talN1hcCHPiO07-VTapTxCWlS
 
 Diagrama UML de objetos:
 
-Obs.: Apenas por questões de teste alguns métodos do projeto estão implementados, porém estão comentados no código na sua versão final para a primeira entrega 
+Obs.: Apenas por questões de teste alguns métodos do projeto estão implementados, porém estão comentados no código na sua versão final para a primeira entrega.
