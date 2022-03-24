@@ -1,10 +1,10 @@
 package Principal;
 
 public class Cnpj {
-    private int prefixo1;
-    private int prefixo2;
-    private int prefixo3;
-    private int sufixo;
+     int prefixo1;
+     int prefixo2;
+     int prefixo3;
+     int sufixo;
 
     public Cnpj(int prefixo1, int prefixo2, int prefixo3, int sufixo) {
         this.prefixo1 = prefixo1;
