@@ -1,12 +1,12 @@
 package gerenciaLocatarios;
 
 public class Endereco {
-    private String logradouro;
-    private int numero;
-    private String complemento;
-    private String bairro;
-    private String cidade;
-    private String cep;
+     String logradouro;
+     int numero;
+     String complemento;
+     String bairro;
+     String cidade;
+     String cep;
 
     public Endereco(String logradouro, int numero, String complemento, String bairro, String cidade, String cep) {
         this.logradouro = logradouro;
