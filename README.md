@@ -12,15 +12,11 @@ André Luiz Peron Martins Lanna
 |Nome|Matrícula|
 | -------- | -------- |
 |Philipe de Sousa Barros|170154319|
-| -------- | -------- |
 |Luan Alves Barroso|202023841|
-| -------- | -------- |
 |Mário Vinícius Beleza Carneiro|202046265|
-| -------- | -------- |
 |Lucas Lopes Rocha|202023903|
-| -------- | -------- |
 |João Lucas Miranda de Sousa|202016604|
-| -------- | -------- |
+
 # 1ª Entrega
 [Diagrama UML de classes](https://drive.google.com/file/d/1-GolP36talN1hcCHPiO07-VTapTxCWlS/view?usp=sharing)
 
