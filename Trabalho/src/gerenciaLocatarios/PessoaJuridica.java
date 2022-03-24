@@ -1,38 +1,13 @@
-package gerenciaLocatarios;
-
-import Principal.Cnpj;
+package GerenciadorLocatario;
 
 public class PessoaJuridica extends Locatario {
-    
-     PessoaFisica[] funcionarios = new PessoaFisica[99];
-
-     int prefixo1, prefixo2, prefixo3, sufixo;
-     Cnpj cnpj = new Cnpj(prefixo1, prefixo2, prefixo3, sufixo);
-
-     String razaoSocial;
-
-    public PessoaJuridica(String celular, String email, String logradouro, int numero, String complemento,
-            String bairro, String cidade, String cep, String razaoSocial, int prefixo1, int prefixo2, int prefixo3,
-            int sufixo) {
-
-        super(celular, email, logradouro, numero, complemento, bairro, cidade, cep);
-        this.razaoSocial = razaoSocial;
-
-        this.prefixo1 = cnpj.getPrefixo1();
-        this.prefixo1 = prefixo1;
-        this.prefixo2 = cnpj.getPrefixo2();
-        this.prefixo2 = prefixo2;
-        this.prefixo3 = cnpj.getPrefixo3();
-        this.prefixo3 = prefixo3;
-        this.sufixo = cnpj.getSufixo();
-        this.sufixo = sufixo;
-    }
-
-    public String getRazaoSocial() {
-        return razaoSocial;
-    }
-
-    public void cadastrarFuncionario(PessoaFisica pf) {
-
-    }
+	String cnpj;
+	String nomeSocial;
+	
+	public PessoaJuridica(String cnpj2, String nomeSocial2, String email, String telefone) {
+		this.cnpj = cnpj2;
+		this.nomeSocial = nomeSocial2;
+		this.email = email;
+		this.telefone = telefone;
+	}
 }
