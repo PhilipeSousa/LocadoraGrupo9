@@ -3,7 +3,7 @@ package gerenciaFrota;
 import javax.swing.JOptionPane;
 
 public class Veiculos {
-	protected String marca,
+	 String marca,
 			modelo,
 			anoFabricacao,
 			anoModelo,
@@ -22,7 +22,7 @@ public class Veiculos {
 	}
 
 	public static void cadastrarMotocicleta() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
+		/*String marca = JOptionPane.showInputDialog("Marca: ");
 		String modelo = JOptionPane.showInputDialog("Modelo: ");
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabrica��o: ");
 		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
@@ -34,11 +34,11 @@ public class Veiculos {
 		String modoPilotagem = JOptionPane.showInputDialog("Modo de pilotagem: ");
 		Motocicletas moto = new Motocicletas(marca, modelo, anoFabricacao, anoModelo, renavam, capacidadeTanque,
 				freiosAbs, controleTracao, pilotoAutomatico, modoPilotagem);
-		cadastrarVeiculo(moto);
+		cadastrarVeiculo(moto);*/
 	}
 
 	public static void cadastrarVeiculosPassageiros() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
+		/*String marca = JOptionPane.showInputDialog("Marca: ");
 		String modelo = JOptionPane.showInputDialog("Modelo: ");
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabrica��o: ");
 		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
@@ -50,11 +50,11 @@ public class Veiculos {
 		String tv = JOptionPane.showInputDialog("Pssui tv? ");
 		VeiculosPassageiros veicPas = new VeiculosPassageiros(marca, modelo, anoFabricacao, anoModelo, renavam,
 				capacidadeTanque, numeroOcupantes, arCondicionado, direcaoHidraulica, tv);
-		cadastrarVeiculo(veicPas);
+		cadastrarVeiculo(veicPas);*/
 	}
 
 	public static void cadastrarVeiculosCarga() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
+		/*String marca = JOptionPane.showInputDialog("Marca: ");
 		String modelo = JOptionPane.showInputDialog("Modelo: ");
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabrica��o: ");
 		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
@@ -66,11 +66,11 @@ public class Veiculos {
 		String tipoCompartimento = JOptionPane.showInputDialog("Tipo do compartimento: ");
 		VeiculosCarga veicCar = new VeiculosCarga(marca, modelo, anoFabricacao, anoModelo, renavam, capacidadeTanque,
 				pesoMaximo, taraVeiculo, compartimentoCarga, tipoCompartimento);
-		cadastrarVeiculo(veicCar);
+		cadastrarVeiculo(veicCar);*/
 	}
 
 	public static void cadastrarCompactoLuxo() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
+		/*String marca = JOptionPane.showInputDialog("Marca: ");
 		String modelo = JOptionPane.showInputDialog("Modelo: ");
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabrica��o: ");
 		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
@@ -81,11 +81,11 @@ public class Veiculos {
 		String cambioAutomatico = JOptionPane.showInputDialog("Possui c�mbio autom�tico? ");
 		CompactoLuxo compLuxo = new CompactoLuxo(marca, modelo, anoFabricacao, anoModelo, renavam, capacidadeTanque,
 				arCondicionado, direcaoHidraulica, cambioAutomatico);
-		cadastrarVeiculo(compLuxo);
+		cadastrarVeiculo(compLuxo);*/
 	}
 
 	public static void cadastrarCompacto() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
+		/*String marca = JOptionPane.showInputDialog("Marca: ");
 		String modelo = JOptionPane.showInputDialog("Modelo: ");
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabrica��o: ");
 		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
@@ -96,11 +96,11 @@ public class Veiculos {
 		String cambioAutomatico = JOptionPane.showInputDialog("Possui c�mbio autom�tico? ");
 		Compacto comp = new Compacto(marca, modelo, anoFabricacao, anoModelo, renavam, capacidadeTanque, arCondicionado,
 				direcaoHidraulica, cambioAutomatico);
-		cadastrarVeiculo(comp);
+		cadastrarVeiculo(comp);*/
 	}
 
 	public static void cadastrarSuvs() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
+		/*String marca = JOptionPane.showInputDialog("Marca: ");
 		String modelo = JOptionPane.showInputDialog("Modelo: ");
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabrica��o: ");
 		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
@@ -111,11 +111,11 @@ public class Veiculos {
 		String cambioAutomatico = JOptionPane.showInputDialog("Possui c�mbio autom�tico? ");
 		Suvs suv = new Suvs(marca, modelo, anoFabricacao, anoModelo, renavam, capacidadeTanque, arCondicionado,
 				direcaoHidraulica, cambioAutomatico);
-		cadastrarVeiculo(suv);
+		cadastrarVeiculo(suv);*/
 	}
 
 	public static void cadastrarSedan() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
+		/*String marca = JOptionPane.showInputDialog("Marca: ");
 		String modelo = JOptionPane.showInputDialog("Modelo: ");
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabrica��o: ");
 		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
@@ -126,7 +126,7 @@ public class Veiculos {
 		String cambioAutomatico = JOptionPane.showInputDialog("Possui c�mbio autom�tico? ");
 		Sedan sed = new Sedan(marca, modelo, anoFabricacao, anoModelo, renavam, capacidadeTanque, arCondicionado,
 				direcaoHidraulica, cambioAutomatico);
-		cadastrarVeiculo(sed);
+		cadastrarVeiculo(sed);*/
 
 	}
 
@@ -139,7 +139,7 @@ public class Veiculos {
 	}
 
 	public static void imprimirLocatario() {
-		for (int x = 0; x < veic.length; x++) {
+		/*for (int x = 0; x < veic.length; x++) {
 			if (veic[x] instanceof Motocicletas) {
 				Motocicletas temp = (Motocicletas) veic[x];
 				String resposta = veic[x].getMarca() + "\n" +
@@ -234,11 +234,11 @@ public class Veiculos {
 						temp.getCambioAutomatico() + "\n";
 				JOptionPane.showMessageDialog(null, resposta);
 			}
-		}
+		}*/
 	}
 
 	public static Veiculos pesquisarVeiculosRenavam() {
-		String strRenavam = JOptionPane.showInputDialog("Digite o renavam: ");
+		/*String strRenavam = JOptionPane.showInputDialog("Digite o renavam: ");
 		for (int x = 0; x < veic.length; x++) {
 			if (veic[x] instanceof Motocicletas) {
 				Motocicletas temp = (Motocicletas) veic[x];
@@ -292,7 +292,7 @@ public class Veiculos {
 			}
 		}
 		JOptionPane.showMessageDialog(null, "N�o est� na lista!");
-		return null;
+		return null;*/
 	}
 
 	public static void pesquisarVeiculosMarcaModeloRen() {
