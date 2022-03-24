@@ -141,5 +141,6 @@ public class Locatario {
 		} else if (elementoASerRemovido == null) {
 			JOptionPane.showMessageDialog(null, "Locatario n�o encontrado!");
 		}
-	}*/
+		*/
+	}
 }
