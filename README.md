@@ -18,8 +18,6 @@ Alunos:
 |João Lucas Miranda de Sousa|202016604|
 
 # 1ª Entrega
-[Diagrama UML de classes](https://drive.google.com/file/d/1-GolP36talN1hcCHPiO07-VTapTxCWlS/view?usp=sharing)
-
-Diagrama UML de objetos:
+[Diagrama de Classes e Diagrama de Objetos (UML)](https://github.com/PhilipeSousa/LocadoraGrupo9/tree/main/Diagramas%20UML)
 
 Obs.: Apenas por questões de teste alguns métodos do projeto estão implementados, porém estão comentados no código na sua versão final para a primeira entrega.
