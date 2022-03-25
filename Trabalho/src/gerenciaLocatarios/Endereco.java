@@ -1,15 +1,16 @@
-package GerenciadorLocatario;
+package gerenciaLocatarios;
 
 public class Endereco {
 	String cidade,
-	estado,
-	rua, 
-	numero,
-	complemento,
-	bairro,
-	cep;
-	
-	public Endereco (String cid, String est, String r, String n, String comp, String ba, String ce) {
+			estado,
+			rua,
+			complemento,
+			bairro,
+			cep;
+
+	int numero;
+
+	public Endereco(String cid, String est, String r, int n, String comp, String ba, String ce) {
 		this.cidade = cid;
 		this.estado = est;
 		this.rua = r;
@@ -27,11 +28,11 @@ public class Endereco {
 		this.rua = rua;
 	}
 
-	public String getNumero() {
+	public int getNumero() {
 		return numero;
 	}
 
-	public void setNumero(String numero) {
+	public void setNumero(int numero) {
 		this.numero = numero;
 	}
 
