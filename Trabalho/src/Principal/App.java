@@ -7,6 +7,11 @@ import gerenciaLocatarios.*;
 //import gerenciaReservas.*;
 
 public class App {
+    
+     String nomeLocadora;
+     String cnpjLocadora;
+             
+    
     public static void main(String[] args) {
         char opcao = 'D', opcao1 = 'E', opcao2 = 'D', opcao3 = 'D', opcao4 = 'C';
 

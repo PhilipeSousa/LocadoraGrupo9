@@ -1,10 +1,11 @@
 package gerenciaReservas;
 
 public class Valores {
-	int valorDiaria,
-			valorSeguroTerceiros,
-			valorSeguroProprio,
-			valorImpostos,
-			valorTotalLocacao;
+	boolean opcSeguroProprio;
+	float valorDiaria;
+	float valorSeguroTerceiros;
+	float valorSeguroProprio;
+	float valorImpostos;
+	float valorTotalLocacao;
 
 }
