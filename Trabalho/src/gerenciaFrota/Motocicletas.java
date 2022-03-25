@@ -1,14 +1,14 @@
 package gerenciaFrota;
 
 public class Motocicletas extends Veiculos {
-	String freiosAbs,
+	boolean freiosAbs,
 			controleTracao,
-			pilotoAutomatico,
-			modoPilotagem;
+			pilotoAutomatico;
+	String modoPilotagem;
 
 	public Motocicletas(String marca, String modelo, String anoFabricacao, String anoModelo,
-			String renavam, String capacidadeTanque, String freiosAbs, String controleTracao,
-			String pilotoAutomatico, String modoPilotagem) {
+			String renavam, float capacidadeTanque, boolean freiosAbs, boolean controleTracao,
+			boolean pilotoAutomatico, String modoPilotagem) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.anoFabricacao = anoFabricacao;
@@ -21,15 +21,15 @@ public class Motocicletas extends Veiculos {
 		this.modoPilotagem = modoPilotagem;
 	}
 
-	public String getFreiosAbs() {
+	public boolean getFreiosAbs() {
 		return freiosAbs;
 	}
 
-	public String getControleTracao() {
+	public boolean getControleTracao() {
 		return controleTracao;
 	}
 
-	public String getPilotoAutomatico() {
+	public boolean getPilotoAutomatico() {
 		return pilotoAutomatico;
 	}
 

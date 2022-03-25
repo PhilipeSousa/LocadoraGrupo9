@@ -3,8 +3,8 @@ package gerenciaFrota;
 public class CompactoLuxo extends VeiculosPasseio {
 
 	public CompactoLuxo(String marca, String modelo, String anoFabricacao, String anoModelo,
-			String renavam, String capacidadeTanque, String arCondicionado,
-			String direcaoHidraulica, String cambioAutomatico) {
+			String renavam, float capacidadeTanque, boolean arCondicionado,
+			boolean direcaoHidraulica, boolean cambioAutomatico) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.anoFabricacao = anoFabricacao;

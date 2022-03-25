@@ -1,39 +1,33 @@
 package gerenciaFrota;
 
 public class VeiculosPassageiros extends VeiculosUtilitarios {
-	String numeroOcupantes,
-			arCondicionado,
+	boolean arCondicionado,
 			direcaoHidraulica,
 			tv;
 
 	public VeiculosPassageiros(String marca, String modelo, String anoFabricacao, String anoModelo,
-			String renavam, String capacidadeTanque, String numeroOcupantes, String arCondicionado,
-			String direcaoHidraulica, String tv) {
+			String renavam, float capacidadeTanque, boolean arCondicionado,
+			boolean direcaoHidraulica, boolean tv) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.anoFabricacao = anoFabricacao;
 		this.anoModelo = anoModelo;
 		this.renavam = renavam;
 		this.capacidadeTanque = capacidadeTanque;
-		this.numeroOcupantes = numeroOcupantes;
 		this.arCondicionado = arCondicionado;
 		this.direcaoHidraulica = direcaoHidraulica;
 		this.tv = tv;
 	}
 
-	public String getNumeroOcupantes() {
-		return numeroOcupantes;
-	}
-
-	public String getArCondicionado() {
+	public boolean getArCondicionado() {
 		return arCondicionado;
 	}
 
-	public String getDirecaoHidraulica() {
+	public boolean getDirecaoHidraulica() {
 		return direcaoHidraulica;
 	}
 
-	public String getTv() {
+	public boolean getTv() {
 		return tv;
 	}
 

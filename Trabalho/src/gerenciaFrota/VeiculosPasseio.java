@@ -1,19 +1,19 @@
 package gerenciaFrota;
 
 public class VeiculosPasseio extends Veiculos {
-	String arCondicionado,
+	boolean arCondicionado,
 			direcaoHidraulica,
 			cambioAutomatico;
 
-	public String getArCondicionado() {
+	public boolean getArCondicionado() {
 		return arCondicionado;
 	}
 
-	public String getDirecaoHidraulica() {
+	public boolean getDirecaoHidraulica() {
 		return direcaoHidraulica;
 	}
 
-	public String getCambioAutomatico() {
+	public boolean getCambioAutomatico() {
 		return cambioAutomatico;
 	}
 }

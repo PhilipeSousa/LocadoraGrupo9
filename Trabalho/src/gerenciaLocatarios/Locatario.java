@@ -91,24 +91,24 @@ public class Locatario {
 		 */
 	}
 
-	public static Locatario buscarLocatario() {
-		/*
-		 * JOptionPane.showMessageDialog(null, "Realizar busca de locat�rio ");
-		 * String nomeCpf = JOptionPane.showInputDialog("Digite um nome ou CPF: ");
-		 * 
-		 * for (int x = 0; x < loc.length; x++) {
-		 * if (loc[x] instanceof PessoaFisica) {
-		 * PessoaFisica temp = (PessoaFisica) loc[x];
-		 * String nomeLocatario = temp.getNome();
-		 * String cpfLocatario = temp.getCpf();
-		 * if (cpfLocatario.equals(nomeCpf)| nomeLocatario.equals(nomeCpf)) {
-		 * return loc[x];
-		 * }
-		 * }
-		 * }
-		 * return null;
-		 */
-	}
+	// public static Locatario buscarLocatario() {
+	/*
+	 * JOptionPane.showMessageDialog(null, "Realizar busca de locat�rio ");
+	 * String nomeCpf = JOptionPane.showInputDialog("Digite um nome ou CPF: ");
+	 * 
+	 * for (int x = 0; x < loc.length; x++) {
+	 * if (loc[x] instanceof PessoaFisica) {
+	 * PessoaFisica temp = (PessoaFisica) loc[x];
+	 * String nomeLocatario = temp.getNome();
+	 * String cpfLocatario = temp.getCpf();
+	 * if (cpfLocatario.equals(nomeCpf)| nomeLocatario.equals(nomeCpf)) {
+	 * return loc[x];
+	 * }
+	 * }
+	 * }
+	 * return null;
+	 */
+	// }
 
 	public static void alterarLocatario() {
 		// Implementar o m�todo alterar locat�rio
