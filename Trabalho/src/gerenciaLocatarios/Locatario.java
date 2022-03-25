@@ -6,7 +6,6 @@ public class Locatario {
 	String email;
 	String celular;
 	Endereco endereco;
-	static Locatario[] loc = new Locatario[0];
 
 	public String getEmail() {
 		return email;
