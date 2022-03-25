@@ -1,8 +1,8 @@
 package gerenciaLocatarios;
 
 public class PessoaJuridica extends Locatario {
-	String cnpjPJ;
-	String razaoSocial;
+	private String cnpjPJ;
+	private String razaoSocial;
 
 	PessoaFisica[] funcionarios = new PessoaFisica[0];
 
@@ -16,4 +16,21 @@ public class PessoaJuridica extends Locatario {
 	public static void cadastrarFuncionario(PessoaFisica pf) {
 
 	}
+
+	public String getCnpjPJ() {
+		return cnpjPJ;
+	}
+
+	public void setCnpjPJ(String cnpjPJ) {
+		this.cnpjPJ = cnpjPJ;
+	}
+
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
+	}
+
 }

@@ -1,9 +1,9 @@
 package gerenciaFrota;
 
 public class VeiculosCarga extends VeiculosUtilitarios {
-	float taraVeiculo,
+	private float taraVeiculo,
 			tamCompartimento;
-	String tipoCompartimento;
+	private String tipoCompartimento;
 
 	public VeiculosCarga(String marca, String modelo, String anoFabricacao, String anoModelo,
 			String renavam, float capacidadeTanque, float taraVeiculo,

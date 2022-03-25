@@ -1,10 +1,10 @@
 package gerenciaFrota;
 
 public class Motocicletas extends Veiculos {
-	boolean freiosAbs,
+	private boolean freiosAbs,
 			controleTracao,
 			pilotoAutomatico;
-	String modoPilotagem;
+	private String modoPilotagem;
 
 	public Motocicletas(String marca, String modelo, String anoFabricacao, String anoModelo,
 			String renavam, float capacidadeTanque, boolean freiosAbs, boolean controleTracao,

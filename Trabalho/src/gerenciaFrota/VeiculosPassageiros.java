@@ -1,7 +1,7 @@
 package gerenciaFrota;
 
 public class VeiculosPassageiros extends VeiculosUtilitarios {
-	boolean arCondicionado,
+	private boolean arCondicionado,
 			direcaoHidraulica,
 			tv;
 
