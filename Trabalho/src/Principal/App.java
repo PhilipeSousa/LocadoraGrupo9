@@ -30,23 +30,19 @@ public class App {
                         opcao1 = menuGerenciaLocatario();
                         switch (opcao1) {
                             case 'A': { // Cadastrar locatario
-                                // Locatario.cadastrarPessoaFisica();
-                                JOptionPane.showMessageDialog(null, "Cadastrar locatario");
+                                Locatario.cadastrarPessoaFisica();
                                 break;
                             }
                             case 'B': { // Buscar locatario
-                                // Locatario.alterarLocatario();
-                                JOptionPane.showMessageDialog(null, "Buscar locatario");
+                                Locatario.alterarLocatario();
                                 break;
                             }
                             case 'C': { // Pesquisar locatario
-                                // Locatario.pesquisarLocatario();
-                                JOptionPane.showMessageDialog(null, "Pesquisar locatario");
+                                Locatario.pesquisarLocatario();
                                 break;
                             }
                             case 'D': { // Remover locatario
-                                // Locatario.removerLocatario();
-                                JOptionPane.showMessageDialog(null, "Remover locatario");
+                                Locatario.removerLocatario();
                                 break;
                             }
                             case 'E': { // Retornar ao menu anterior
@@ -69,20 +65,17 @@ public class App {
                                     opcao3 = menuCadastroVeiculos();
                                     switch (opcao3) {
                                         case 'A': { // Cadastrar veiculo de passeio
-                                            // Veiculos.cadastrarVeiculoPasseio();
-                                            JOptionPane.showMessageDialog(null, "Cadastrar veiculo de passeio");
+                                            Veiculos.cadastrarVeiculoPasseio();
                                             break;
                                         }
 
                                         case 'B': { // Cadastrar veiculo utilitario
-                                            // Veiculos.cadastrarVeiculosUtilitarios();
-                                            JOptionPane.showMessageDialog(null, "Cadastrar veiculo utilitario");
+                                            Veiculos.cadastrarVeiculosUtilitarios();
                                             break;
                                         }
 
                                         case 'C': { // Cadastrar motocicleta
-                                            // Veiculos.cadastrarMotocicleta();
-                                            JOptionPane.showMessageDialog(null, "Cadastrar motocicleta");
+                                            Veiculos.cadastrarMotocicleta();
                                             break;
                                         }
 
@@ -104,8 +97,7 @@ public class App {
                                     opcao4 = menuPesquisaVeiculo();
                                     switch (opcao4) {
                                         case 'A': { // Pesquisar pelo Renavam
-                                            // Veiculos.pesquisarVeiculosRenavam();
-                                            JOptionPane.showMessageDialog(null, "Pesquisar pelo Renavam");
+                                            Veiculos.pesquisarVeiculosRenavam();
                                             break;
                                         }
                                         case 'B': { // Pesquisar veiculo por marca, modelo ou renavam
