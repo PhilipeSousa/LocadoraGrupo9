@@ -17,7 +17,7 @@ public class Motocicletas extends Veiculos {
 		this.capacidadeTanque = capacidadeTanque;
 		this.freiosAbs = freiosAbs;
 		this.controleTracao = controleTracao;
-		this.pilotoAutomatico = pilotoAutomatico;a
+		this.pilotoAutomatico = pilotoAutomatico;
 		this.modoPilotagem = modoPilotagem;
 	}
 
