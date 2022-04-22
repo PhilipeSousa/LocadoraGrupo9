@@ -30,7 +30,6 @@ public class App {
                         opcao1 = menuGerenciaLocatario();
                         switch (opcao1) {
                             case 'A': { // Cadastrar locatario
-                                JOptionPane.showMessageDialog(null, "Cadastrar locatario");
                                 String escolha = JOptionPane
                                         .showInputDialog("Escolha:\nF- cadastrar PF\nJ- cadastrar PJ");
                                 if (escolha.equalsIgnoreCase("F")) {
@@ -46,19 +45,18 @@ public class App {
                             }
                             case 'B': { // Buscar locatario
                                 // Locatario.alterarLocatario();
-                                JOptionPane.showMessageDialog(null, "Buscar locatario");
+                                System.out.println(Locatario.mostrarCadastro());
                                 break;
                             }
                             case 'C': { // Pesquisar locatario
-                                JOptionPane.showMessageDialog(null, "Pesquisar locatario");
                                 String escolha = JOptionPane
                                         .showInputDialog("Escolha:\nF- pesquisar PF\nJ- pesquisar PJ");
                                 Locatario.pesquisarLocatario(escolha);
                                 break;
                             }
                             case 'D': { // Remover locatario
-                                // Locatario.removerLocatario();
-                                JOptionPane.showMessageDialog(null, "Remover locatario");
+                                JOptionPane.showInputDialog(null, "")
+                                Locatario.removerLocatario(escolha);
                                 break;
                             }
                             case 'E': { // Retornar ao menu anterior
@@ -82,19 +80,16 @@ public class App {
                                     switch (opcao3) {
                                         case 'A': { // Cadastrar veiculo de passeio
                                             // Veiculos.cadastrarVeiculoPasseio();
-                                            JOptionPane.showMessageDialog(null, "Cadastrar veiculo de passeio");
                                             break;
                                         }
 
                                         case 'B': { // Cadastrar veiculo utilitario
                                             // Veiculos.cadastrarVeiculosUtilitarios();
-                                            JOptionPane.showMessageDialog(null, "Cadastrar veiculo utilitario");
                                             break;
                                         }
 
                                         case 'C': { // Cadastrar motocicleta
                                             // Veiculos.cadastrarMotocicleta();
-                                            JOptionPane.showMessageDialog(null, "Cadastrar motocicleta");
                                             break;
                                         }
 
@@ -117,13 +112,11 @@ public class App {
                                     switch (opcao4) {
                                         case 'A': { // Pesquisar pelo Renavam
                                             // Veiculos.pesquisarVeiculosRenavam();
-                                            JOptionPane.showMessageDialog(null, "Pesquisar pelo Renavam");
                                             break;
                                         }
                                         case 'B': { // Pesquisar veiculo por marca, modelo ou renavam
                                             // Veiculos.pesquisarVeiculosMarcaModeloRen();
-                                            JOptionPane.showMessageDialog(null,
-                                                    "Pesquisar veiculo por marca, modelo ou renavam");
+
                                             break;
                                         }
                                         case 'C': { // Retornar ao menu anterior
@@ -138,12 +131,10 @@ public class App {
                             }
 
                             case 'C': { // Atualizar dados de um veiculo
-                                JOptionPane.showMessageDialog(null, "Atualizar dados de um veiculo");
                                 break;
                             }
 
                             case 'D': { // Remover veiculo da frota
-                                JOptionPane.showMessageDialog(null, "Remover veiculo da frota");
                                 break;
                             }
 

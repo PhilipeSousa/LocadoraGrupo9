@@ -76,27 +76,16 @@ public class Locatario {
 		cadastrarLocatario(null, pj, "J");
 	}
 
-	public static void imprimirLocatario() {
-		/*
-		 * for (int x = 0; x < loc.length; x++) {
-		 * if (loc[x] instanceof PessoaFisica) {
-		 * PessoaFisica temp = (PessoaFisica) loc[x];
-		 * String resposta = temp.getNome() + "\n" +
-		 * temp.estadoCivil + "\n" +
-		 * temp.cpf + "\n" +
-		 * loc[x].getEmail() + "\n" +
-		 * loc[x].getcelular() + "\n" +
-		 * loc[x].endereco.getCidade() + "\n" +
-		 * loc[x].endereco.getEstado() + "\n" +
-		 * loc[x].endereco.getRua() + "\n" +
-		 * loc[x].endereco.getNumero() + "\n" +
-		 * loc[x].endereco.getComplemento() + "\n" +
-		 * loc[x].endereco.getBairro() + "\n" +
-		 * loc[x].endereco.getCep();
-		 * JOptionPane.showMessageDialog(null, resposta);
-		 * }
-		 * }
-		 */
+	public static String mostrarCadastro() {
+		String resposta = "";
+		for (PessoaFisica pf : pfs) {
+			resposta += pf.getNomeCompleto() + '\n';
+		}
+
+		for (PessoaJuridica pj : pjs) {
+			resposta += pj.getRazaoSocial() + '\n';
+		}
+		return resposta;
 	}
 
 	// public static Locatario buscarLocatario() {
@@ -126,19 +115,21 @@ public class Locatario {
 		boolean resposta = false;
 
 		if (escolha.equalsIgnoreCase("F")) {
-			String cpf = JOptionPane.showInputDialog(null, "Digite o cpf:");
+			String esc = JOptionPane.showInputDialog(null, "Buscar por nome, cpf, ou email:");
 			for (PessoaFisica pf : pfs) {
-				if (pf.getCpf().equals(cpf)) {
-					JOptionPane.showMessageDialog(null, "Encontrado cadastro com o CPF: " + cpf);
+				if (pf.getCpf().contains(esc) || pf.getNomeCompleto().contains(esc) || pf.getEmail().contains(esc)) {
+					JOptionPane.showMessageDialog(null, "Encontrado cadastro:\nNome: " + pf.getNomeCompleto() +
+							"\nCPF: " + pf.getCpf());
 					resposta = true;
 				}
 			}
 
 		} else if (escolha.equalsIgnoreCase("J")) {
-			String cnpj = JOptionPane.showInputDialog(null, "Digite o cnpj:");
+			String esc = JOptionPane.showInputDialog(null, "Buscar por Razao social, cnpj ou email:");
 			for (PessoaJuridica pj : pjs) {
-				if (pj.getCnpjPJ().equals(cnpj)) {
-					JOptionPane.showMessageDialog(null, "Encontrado o cadastro com CNPJ: " + cnpj);
+				if (pj.getCnpjPJ().contains(esc) || pj.getRazaoSocial().contains(esc) || pj.getEmail().contains(esc)) {
+					JOptionPane.showMessageDialog(null, "Encontrado o cadastro:\nRazao social: " + pj.getRazaoSocial() +
+							"\nCNPJ: " + pj.getCnpjPJ());
 					resposta = true;
 				}
 			}
@@ -153,28 +144,7 @@ public class Locatario {
 		return resposta;
 	}
 
-	public static void removerLocatario() {
-		/*
-		 * Locatario elementoASerRemovido = buscarLocatario();
-		 * Locatario[] newLoc = null;
-		 * if (elementoASerRemovido instanceof PessoaFisica) {
-		 * for (int i = 0; i < loc.length-1; i++) {
-		 * if (loc[i] == elementoASerRemovido) {
-		 * newLoc = new Locatario[loc.length - 1];
-		 * for (int index = 0; index < i; index++) {
-		 * newLoc[index] = loc[index];
-		 * }
-		 * for (int j = i; j < loc.length - 1; j++) {
-		 * newLoc[j] = loc[j+1];
-		 * }
-		 * loc = newLoc;
-		 * break;
-		 * }
-		 * }
-		 * JOptionPane.showMessageDialog(null, "Locat�rio removido!");
-		 * } else if (elementoASerRemovido == null) {
-		 * JOptionPane.showMessageDialog(null, "Locatario n�o encontrado!");
-		 * }
-		 */
+	public static void removerLocatario(String escolha) {
+		pesquisarLocatario(escolha)
 	}
 }
