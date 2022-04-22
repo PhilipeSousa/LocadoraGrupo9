@@ -10,11 +10,11 @@ public class Endereco {
 
 	int numero;
 
-	public Endereco(String cid, String est, String r, int n, String comp, String ba, String ce) {
+	public Endereco(String cid, String est, String r, int numero1, String comp, String ba, String ce) {
 		this.cidade = cid;
 		this.estado = est;
 		this.rua = r;
-		this.numero = n;
+		this.numero = numero1;
 		this.complemento = comp;
 		this.bairro = ba;
 		this.cep = ce;

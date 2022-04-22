@@ -3,21 +3,21 @@ package Principal;
 import javax.swing.JOptionPane;
 
 import gerenciaLocatarios.*;
-import gerenciaFrota.*;
-import gerenciaReservas.*;
+// import gerenciaFrota.*;
+// import gerenciaReservas.*;
 
 public class App {
     static String nomeLocadora = "LOCADORA NOTA 10";
     static String cnpjLocadora = "133.101.101-10";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         char opcao = 'D', opcao1 = 'E', opcao2 = 'D', opcao3 = 'D', opcao4 = 'C';
 
         /////////////////////////////////// INSTANCIACAO ///////////////////////////
 
-        Locatario[] locatario = new Locatario[0];
-        Reserva[] reserva = new Reserva[0];
-        Veiculos[] veiculos = new Veiculos[0];
+        // Locatario[] locatario = new Locatario[0];
+        // Reserva[] reserva = new Reserva[0];
+        // Veiculos[] veiculos = new Veiculos[0];
 
         /////////////////////////////////// MENU ///////////////////////////////////
 
@@ -30,19 +30,35 @@ public class App {
                         opcao1 = menuGerenciaLocatario();
                         switch (opcao1) {
                             case 'A': { // Cadastrar locatario
-                                Locatario.cadastrarPessoaFisica();
+                                JOptionPane.showMessageDialog(null, "Cadastrar locatario");
+                                String escolha = JOptionPane
+                                        .showInputDialog("Escolha:\nF- cadastrar PF\nJ- cadastrar PJ");
+                                if (escolha.equalsIgnoreCase("F")) {
+                                    Locatario.cadastrarPessoaFisica();
+
+                                } else if (escolha.equalsIgnoreCase("J")) {
+                                    Locatario.cadastrarPessoaJuridica();
+
+                                } else {
+                                    JOptionPane.showMessageDialog(null, "Valor errado");
+                                }
                                 break;
                             }
                             case 'B': { // Buscar locatario
-                                Locatario.alterarLocatario();
+                                // Locatario.alterarLocatario();
+                                JOptionPane.showMessageDialog(null, "Buscar locatario");
                                 break;
                             }
                             case 'C': { // Pesquisar locatario
-                                Locatario.pesquisarLocatario();
+                                JOptionPane.showMessageDialog(null, "Pesquisar locatario");
+                                String escolha = JOptionPane
+                                        .showInputDialog("Escolha:\nF- pesquisar PF\nJ- pesquisar PJ");
+                                Locatario.pesquisarLocatario(escolha);
                                 break;
                             }
                             case 'D': { // Remover locatario
-                                Locatario.removerLocatario();
+                                // Locatario.removerLocatario();
+                                JOptionPane.showMessageDialog(null, "Remover locatario");
                                 break;
                             }
                             case 'E': { // Retornar ao menu anterior
@@ -65,17 +81,20 @@ public class App {
                                     opcao3 = menuCadastroVeiculos();
                                     switch (opcao3) {
                                         case 'A': { // Cadastrar veiculo de passeio
-                                            Veiculos.cadastrarVeiculoPasseio();
+                                            // Veiculos.cadastrarVeiculoPasseio();
+                                            JOptionPane.showMessageDialog(null, "Cadastrar veiculo de passeio");
                                             break;
                                         }
 
                                         case 'B': { // Cadastrar veiculo utilitario
-                                            Veiculos.cadastrarVeiculosUtilitarios();
+                                            // Veiculos.cadastrarVeiculosUtilitarios();
+                                            JOptionPane.showMessageDialog(null, "Cadastrar veiculo utilitario");
                                             break;
                                         }
 
                                         case 'C': { // Cadastrar motocicleta
-                                            Veiculos.cadastrarMotocicleta();
+                                            // Veiculos.cadastrarMotocicleta();
+                                            JOptionPane.showMessageDialog(null, "Cadastrar motocicleta");
                                             break;
                                         }
 
@@ -97,7 +116,8 @@ public class App {
                                     opcao4 = menuPesquisaVeiculo();
                                     switch (opcao4) {
                                         case 'A': { // Pesquisar pelo Renavam
-                                            Veiculos.pesquisarVeiculosRenavam();
+                                            // Veiculos.pesquisarVeiculosRenavam();
+                                            JOptionPane.showMessageDialog(null, "Pesquisar pelo Renavam");
                                             break;
                                         }
                                         case 'B': { // Pesquisar veiculo por marca, modelo ou renavam
