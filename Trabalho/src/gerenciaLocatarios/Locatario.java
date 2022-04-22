@@ -147,7 +147,7 @@ public class Locatario {
 	public static boolean removerLocatario(String escolha, PessoaFisica pf, PessoaJuridica pj) {
 		boolean resposta = false;
 		pesquisarLocatario(escolha);
-		pfs.contains(pf);
+
 		if (escolha.equalsIgnoreCase("F")) {
 			if (pfs.contains(pf)) {
 				resposta = pfs.remove(pf);
