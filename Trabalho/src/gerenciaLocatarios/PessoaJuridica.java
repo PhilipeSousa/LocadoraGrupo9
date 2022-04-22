@@ -13,6 +13,10 @@ public class PessoaJuridica extends Locatario {
 		this.celular = celular;
 	}
 
+	public PessoaJuridica() {
+
+	}
+
 	public static void cadastrarFuncionario(PessoaFisica pf) {
 
 	}

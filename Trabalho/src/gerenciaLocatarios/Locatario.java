@@ -144,7 +144,25 @@ public class Locatario {
 		return resposta;
 	}
 
-	public static void removerLocatario(String escolha) {
-		pesquisarLocatario(escolha)
+	public static boolean removerLocatario(String escolha, PessoaFisica pf, PessoaJuridica pj) {
+		boolean resposta = false;
+		pesquisarLocatario(escolha);
+		pfs.contains(pf);
+		if (escolha.equalsIgnoreCase("F")) {
+			if (pfs.contains(pf)) {
+				resposta = pfs.remove(pf);
+			}
+
+		} else if (escolha.equalsIgnoreCase("J")) {
+			JOptionPane.showMessageDialog(null, "Valor do cnpj");
+
+			if (pjs.contains(pj)) {
+				resposta = pjs.remove(pj);
+			}
+
+		} else {
+			JOptionPane.showMessageDialog(null, "Valor invalido");
+		}
+		return resposta;
 	}
 }

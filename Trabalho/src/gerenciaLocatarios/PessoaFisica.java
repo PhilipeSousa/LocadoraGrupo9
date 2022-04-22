@@ -13,6 +13,10 @@ public class PessoaFisica extends Locatario {
 		this.celular = celular;
 	}
 
+	public PessoaFisica() {
+
+	}
+
 	public String getNomeCompleto() {
 		return nomeCompleto;
 	}

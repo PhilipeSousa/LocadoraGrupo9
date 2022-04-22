@@ -18,6 +18,8 @@ public class App {
         // Locatario[] locatario = new Locatario[0];
         // Reserva[] reserva = new Reserva[0];
         // Veiculos[] veiculos = new Veiculos[0];
+        PessoaFisica pf = new PessoaFisica();
+        PessoaJuridica pj = new PessoaJuridica();
 
         /////////////////////////////////// MENU ///////////////////////////////////
 
@@ -55,8 +57,9 @@ public class App {
                                 break;
                             }
                             case 'D': { // Remover locatario
-                                JOptionPane.showInputDialog(null, "")
-                                Locatario.removerLocatario(escolha);
+                                String escolha = JOptionPane.showInputDialog(null,
+                                        "Escolha:\nF- remover PF\nJ- remover PJ");
+                                Locatario.removerLocatario(escolha, pf, pj);
                                 break;
                             }
                             case 'E': { // Retornar ao menu anterior
