@@ -5,11 +5,28 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Locatario {
-	String email;
-	String celular;
+	static String email;
+	static String celular;
 	Endereco endereco;
 	static List<PessoaFisica> pfs = new LinkedList<PessoaFisica>();
 	static List<PessoaJuridica> pjs = new LinkedList<PessoaJuridica>();
+	private static String nomeCompleto2;
+	private static String estadoCivil2;
+	private static String cpf2;
+	static PessoaFisica pf = new PessoaFisica(nomeCompleto2, estadoCivil2, cpf2, email, celular);
+	private static String nome;
+	private static String estadoCivil;
+	private static String cidade1;
+	private static String estado1;
+	private static String rua1;
+	private static String complemento1;
+	private static String bairro1;
+	private static String cep1;
+	private static int numero1;
+
+	private static String cnpjPJ2;
+	private static String razaoSocial2;
+	static PessoaJuridica pj = new PessoaJuridica(cnpjPJ2, razaoSocial2, email, celular);
 
 	public String getEmail() {
 		return email;
@@ -48,19 +65,19 @@ public class Locatario {
 
 	public static void cadastrarPessoaFisica() {
 
-		String nome = JOptionPane.showInputDialog("Nome: ");
-		String estadoCivil = JOptionPane.showInputDialog("Estado Civil: ");
-		String cpf = JOptionPane.showInputDialog("CPF: ");
-		String email = JOptionPane.showInputDialog("E-mail: ");
-		String celular = JOptionPane.showInputDialog("celular: ");
-		String cidade1 = JOptionPane.showInputDialog("Cidade: ");
-		String estado1 = JOptionPane.showInputDialog("Estado: ");
-		String rua1 = JOptionPane.showInputDialog("Rua: ");
-		int numero1 = Integer.parseInt(JOptionPane.showInputDialog("N�mero: "));
-		String complemento1 = JOptionPane.showInputDialog("Complemento: ");
-		String bairro1 = JOptionPane.showInputDialog("Bairro: ");
-		String cep1 = JOptionPane.showInputDialog("CEP: ");
-		PessoaFisica pf = new PessoaFisica(nome, estadoCivil, cpf, email, celular);
+		Locatario.nome = JOptionPane.showInputDialog("Nome: ");
+		Locatario.estadoCivil = JOptionPane.showInputDialog("Estado Civil: ");
+		Locatario.cpf2 = JOptionPane.showInputDialog("CPF: ");
+		Locatario.email = JOptionPane.showInputDialog("E-mail: ");
+		Locatario.celular = JOptionPane.showInputDialog("celular: ");
+		Locatario.cidade1 = JOptionPane.showInputDialog("Cidade: ");
+		Locatario.estado1 = JOptionPane.showInputDialog("Estado: ");
+		Locatario.rua1 = JOptionPane.showInputDialog("Rua: ");
+		Locatario.numero1 = Integer.parseInt(JOptionPane.showInputDialog("N�mero: "));
+		Locatario.complemento1 = JOptionPane.showInputDialog("Complemento: ");
+		Locatario.bairro1 = JOptionPane.showInputDialog("Bairro: ");
+		Locatario.cep1 = JOptionPane.showInputDialog("CEP: ");
+		pf = new PessoaFisica(nome, estadoCivil, cpf2, email, celular);
 		pf.setEndereco(new Endereco(cidade1, estado1, rua1, numero1, complemento1,
 				bairro1, cep1));
 		cadastrarLocatario(pf, null, "F");
@@ -68,11 +85,11 @@ public class Locatario {
 
 	public static void cadastrarPessoaJuridica() {
 
-		String cnpj = JOptionPane.showInputDialog("CNPJ: ");
-		String nomeSocial = JOptionPane.showInputDialog("Nome social: ");
-		String email = JOptionPane.showInputDialog("E-mail: ");
-		String celular = JOptionPane.showInputDialog("celular: ");
-		PessoaJuridica pj = new PessoaJuridica(cnpj, nomeSocial, email, celular);
+		Locatario.cnpjPJ2 = JOptionPane.showInputDialog("CNPJ: ");
+		Locatario.razaoSocial2 = JOptionPane.showInputDialog("Nome social: ");
+		Locatario.email = JOptionPane.showInputDialog("E-mail: ");
+		Locatario.celular = JOptionPane.showInputDialog("celular: ");
+		pj = new PessoaJuridica(cnpjPJ2, razaoSocial2, email, celular);
 		cadastrarLocatario(null, pj, "J");
 	}
 
@@ -144,25 +161,37 @@ public class Locatario {
 		return resposta;
 	}
 
+	public static boolean sRemoverLocatario(String escolha) {
+		removerLocatario(escolha, pf, pj);
+		return false;
+	}
+
 	public static boolean removerLocatario(String escolha, PessoaFisica pf, PessoaJuridica pj) {
 		boolean resposta = false;
 		pesquisarLocatario(escolha);
 
 		if (escolha.equalsIgnoreCase("F")) {
-			if (pfs.contains(pf)) {
+			int confirmacao = JOptionPane.showConfirmDialog(null, "Deseja remover o cadastro?", "Remover cadastro",
+					JOptionPane.YES_NO_OPTION);
+
+			if (pfs.contains(pf) || confirmacao == JOptionPane.YES_OPTION) {
 				resposta = pfs.remove(pf);
+				JOptionPane.showMessageDialog(null, "Cadastro de CPF: " + pf.getCpf() + " removido");
 			}
 
 		} else if (escolha.equalsIgnoreCase("J")) {
-			JOptionPane.showMessageDialog(null, "Valor do cnpj");
+			int confirmacao = JOptionPane.showConfirmDialog(null, "Deseja remover o cadastro?", "Remover cadastro",
+					JOptionPane.YES_NO_OPTION);
 
-			if (pjs.contains(pj)) {
+			if (pjs.contains(pj) || confirmacao == JOptionPane.YES_OPTION) {
 				resposta = pjs.remove(pj);
+				JOptionPane.showMessageDialog(null, "Cadastro de CNPJ: " + pj.getCnpjPJ() + " removido");
 			}
 
 		} else {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
 		}
+
 		return resposta;
 	}
 }
