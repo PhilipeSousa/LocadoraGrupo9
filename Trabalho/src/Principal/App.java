@@ -44,8 +44,10 @@ public class App {
                                 break;
                             }
                             case 'B': { // Buscar locatario
-                                // Locatario.alterarLocatario();
-                                System.out.println(Locatario.mostrarCadastro());
+                                String escolha = JOptionPane
+                                        .showInputDialog("Escolha:\nF- alterar PF\nJ- alterar PJ");
+                                Locatario.alterarLocatario(escolha);
+                                // System.out.println(Locatario.mostrarCadastro());
                                 break;
                             }
                             case 'C': { // Pesquisar locatario
@@ -57,7 +59,7 @@ public class App {
                             case 'D': { // Remover locatario
                                 String escolha = JOptionPane.showInputDialog(null,
                                         "Escolha:\nF- pesquisar PF\nJ- pesquisar PJ");
-                                Locatario.sRemoverLocatario(escolha);
+                                Locatario.removerLocatario(escolha);
                                 break;
                             }
                             case 'E': { // Retornar ao menu anterior
@@ -184,7 +186,7 @@ public class App {
         char opcao1 = 'E';
         String menu = "Menu Gerencia de Locatarios \n"
                 + "A) Cadastrar Locatario \n"
-                + "B) Buscar Locatario \n"
+                + "B) Alterar Locatario \n"
                 + "C) Pesquisar Locatario \n"
                 + "D) Excluir Locatario \n"
                 + "E) Retornar ao menu anterior";
