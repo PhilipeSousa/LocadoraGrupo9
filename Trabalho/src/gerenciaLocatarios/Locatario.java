@@ -168,30 +168,70 @@ public class Locatario {
 
 	public static boolean removerLocatario(String escolha, PessoaFisica pf, PessoaJuridica pj) {
 		boolean resposta = false;
-		pesquisarLocatario(escolha);
 
 		if (escolha.equalsIgnoreCase("F")) {
-			int confirmacao = JOptionPane.showConfirmDialog(null, "Deseja remover o cadastro?", "Remover cadastro",
-					JOptionPane.YES_NO_OPTION);
-
-			if (pfs.contains(pf) || confirmacao == JOptionPane.YES_OPTION) {
-				resposta = pfs.remove(pf);
-				JOptionPane.showMessageDialog(null, "Cadastro de CPF: " + pf.getCpf() + " removido");
+			String esc = JOptionPane.showInputDialog(null, "Buscar por nome, cpf, ou email:");
+			for (PessoaFisica pf : pfs) {
+				if (pf.getCpf().contains(esc) || pf.getNomeCompleto().contains(esc) || pf.getEmail().contains(esc)) {
+					JOptionPane.showMessageDialog(null, "Encontrado cadastro:\nNome: " + pf.getNomeCompleto() +
+							"\nCPF: " + pf.getCpf());
+					resposta = true;
+				}
 			}
 
 		} else if (escolha.equalsIgnoreCase("J")) {
-			int confirmacao = JOptionPane.showConfirmDialog(null, "Deseja remover o cadastro?", "Remover cadastro",
-					JOptionPane.YES_NO_OPTION);
-
-			if (pjs.contains(pj) || confirmacao == JOptionPane.YES_OPTION) {
-				resposta = pjs.remove(pj);
-				JOptionPane.showMessageDialog(null, "Cadastro de CNPJ: " + pj.getCnpjPJ() + " removido");
+			String esc = JOptionPane.showInputDialog(null, "Buscar por Razao social, cnpj ou email:");
+			for (PessoaJuridica pj : pjs) {
+				if (pj.getCnpjPJ().contains(esc) || pj.getRazaoSocial().contains(esc) || pj.getEmail().contains(esc)) {
+					JOptionPane.showMessageDialog(null, "Encontrado o cadastro:\nRazao social: " + pj.getRazaoSocial() +
+							"\nCNPJ: " + pj.getCnpjPJ());
+					resposta = true;
+				}
 			}
 
 		} else {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
 		}
 
+		if (resposta == false) {
+			JOptionPane.showMessageDialog(null, "NAO Encontrado");
+		}
+
 		return resposta;
 	}
 }
+
+// public static boolean removerLocatario(String escolha, PessoaFisica pf,
+// PessoaJuridica pj) {
+// boolean resposta = false;
+// pesquisarLocatario(escolha);
+
+// if (escolha.equalsIgnoreCase("F")) {
+// int confirmacao = JOptionPane.showConfirmDialog(null, "Deseja remover o
+// cadastro?", "Remover cadastro",
+// JOptionPane.YES_NO_OPTION);
+
+// if (pfs.contains(pf) || confirmacao == JOptionPane.YES_OPTION) {
+// resposta = pfs.remove(pf);
+// JOptionPane.showMessageDialog(null, "Cadastro de CPF: " + pf.getCpf() + "
+// removido");
+// }
+
+// } else if (escolha.equalsIgnoreCase("J")) {
+// int confirmacao = JOptionPane.showConfirmDialog(null, "Deseja remover o
+// cadastro?", "Remover cadastro",
+// JOptionPane.YES_NO_OPTION);
+
+// if (pjs.contains(pj) || confirmacao == JOptionPane.YES_OPTION) {
+// resposta = pjs.remove(pj);
+// JOptionPane.showMessageDialog(null, "Cadastro de CNPJ: " + pj.getCnpjPJ() + "
+// removido");
+// }
+
+// } else {
+// JOptionPane.showMessageDialog(null, "Valor invalido");
+// }
+
+// return resposta;
+// }
+// }
