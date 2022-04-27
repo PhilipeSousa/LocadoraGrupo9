@@ -63,10 +63,39 @@ public class Locatario {
 	}
 
 	public static void cadastrarPessoaFisica() {
+		boolean repeat = true;
 
-		Locatario.nome = JOptionPane.showInputDialog("Nome: ");
+		while(repeat == true){
+			try{
+				Locatario.nome = JOptionPane.showInputDialog("Nome: ");
+				if (Locatario.nome.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true;
 		Locatario.estadoCivil = JOptionPane.showInputDialog("Estado Civil: ");
 		Locatario.cpf2 = JOptionPane.showInputDialog("CPF: ");
+		
+
+		while(repeat == true){
+			try{
+				Locatario.cpf2 = JOptionPane.showInputDialog("CPF: ");
+				if (Locatario.cpf2.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		Locatario.email = JOptionPane.showInputDialog("E-mail: ");
 		Locatario.celular = JOptionPane.showInputDialog("celular: ");
 		Locatario.cidade1 = JOptionPane.showInputDialog("Cidade: ");
@@ -83,10 +112,37 @@ public class Locatario {
 	}
 
 	public static void cadastrarPessoaJuridica() {
+		boolean repeat = true;
 
-		Locatario.cnpjPJ2 = JOptionPane.showInputDialog("CNPJ: ");
+		while(repeat == true){
+			try{
+				Locatario.cnpjPJ2 = JOptionPane.showInputDialog("CNPJ: ");
+				if (Locatario.cnpjPJ2.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true;
 		Locatario.razaoSocial2 = JOptionPane.showInputDialog("Nome social: ");
 		Locatario.email = JOptionPane.showInputDialog("E-mail: ");
+		while(repeat == true){
+			try{
+				Locatario.email = JOptionPane.showInputDialog("E-mail: ");
+				if (Locatario.email.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		Locatario.celular = JOptionPane.showInputDialog("celular: ");
 		pj = new PessoaJuridica(cnpjPJ2, razaoSocial2, email, celular);
 		cadastrarLocatario(null, pj, "J");
