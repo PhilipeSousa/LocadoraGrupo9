@@ -255,9 +255,16 @@ public class Locatario {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
 		}
 
-		if (resposta == false) {
-			JOptionPane.showMessageDialog(null, "Nao Encontrado");
-		}
+		try{
+			if (resposta == false) {
+				throw new ObjetoNaoEncontradoException(" - Objeto nao encontrado");
+			}
+			
+		} catch (ObjetoNaoEncontradoException e){
+			String msg = "ObjetoNaoEncontradoException" + e.getMessage();
+			JOptionPane.showMessageDialog(null, msg);	
+		}	
+		
 		return resposta;
 	}
 
