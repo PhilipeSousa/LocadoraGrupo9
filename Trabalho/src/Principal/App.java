@@ -3,7 +3,7 @@ package Principal;
 import javax.swing.JOptionPane;
 
 import gerenciaLocatarios.*;
-// import gerenciaFrota.*;
+import gerenciaFrota.*;
 // import gerenciaReservas.*;
 
 public class App {
@@ -87,12 +87,13 @@ public class App {
                                         }
 
                                         case 'B': { // Cadastrar veiculo utilitario
-                                            // Veiculos.cadastrarVeiculosUtilitarios();
+                                            // Veiculos.cadastrarVeiculosUtilitarios(); // veiculo de carga ou
+                                            // passageiro
                                             break;
                                         }
 
                                         case 'C': { // Cadastrar motocicleta
-                                            // Veiculos.cadastrarMotocicleta();
+                                            Veiculos.cadastrarMotocicleta();
                                             break;
                                         }
 
@@ -114,11 +115,11 @@ public class App {
                                     opcao4 = menuPesquisaVeiculo();
                                     switch (opcao4) {
                                         case 'A': { // Pesquisar pelo Renavam
-                                            // Veiculos.pesquisarVeiculosRenavam();
+                                            Veiculos.pesquisarVeiculosRenavam();
                                             break;
                                         }
                                         case 'B': { // Pesquisar veiculo por marca, modelo ou renavam
-                                            // Veiculos.pesquisarVeiculosMarcaModeloRen();
+                                            Veiculos.pesquisarVeiculosMarcaModeloRen();
 
                                             break;
                                         }
@@ -138,6 +139,7 @@ public class App {
                             }
 
                             case 'D': { // Remover veiculo da frota
+                                Veiculos.removerVeiculo();
                                 break;
                             }
 
