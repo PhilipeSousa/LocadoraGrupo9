@@ -64,6 +64,7 @@ public class Locatario {
 
 	public static void cadastrarPessoaFisica() {
 		boolean repeat = true;
+		
 
 		while(repeat == true){
 			try{
@@ -80,15 +81,13 @@ public class Locatario {
 		}
 		repeat = true;
 		Locatario.estadoCivil = JOptionPane.showInputDialog("Estado Civil: ");
-		Locatario.cpf2 = JOptionPane.showInputDialog("CPF: ");
 		
-
 		while(repeat == true){
 			try{
 				Locatario.cpf2 = JOptionPane.showInputDialog("CPF: ");
 				if (Locatario.cpf2.equals(""))
 					throw new CampoEmBrancoException(" - Campo em Branco");
-				repeat = false; 
+				repeat = false;
 				
 			} catch (CampoEmBrancoException e){
 				String msg = "CampoEmBrancoException" + e.getMessage();
@@ -119,7 +118,7 @@ public class Locatario {
 				Locatario.cnpjPJ2 = JOptionPane.showInputDialog("CNPJ: ");
 				if (Locatario.cnpjPJ2.equals(""))
 					throw new CampoEmBrancoException(" - Campo em Branco");
-				repeat = false; 
+				repeat = false;
 				
 			} catch (CampoEmBrancoException e){
 				String msg = "CampoEmBrancoException" + e.getMessage();
@@ -135,8 +134,7 @@ public class Locatario {
 				Locatario.email = JOptionPane.showInputDialog("E-mail: ");
 				if (Locatario.email.equals(""))
 					throw new CampoEmBrancoException(" - Campo em Branco");
-				repeat = false; 
-				
+				repeat = false;
 			} catch (CampoEmBrancoException e){
 				String msg = "CampoEmBrancoException" + e.getMessage();
 				JOptionPane.showMessageDialog(null, msg);
@@ -230,6 +228,7 @@ public class Locatario {
 
 	public static boolean pesquisarLocatario(String escolha) {
 		boolean resposta = false;
+		
 
 		if (escolha.equalsIgnoreCase("F")) {
 			String esc = JOptionPane.showInputDialog(null, "Buscar por nome, cpf, ou email:");
@@ -250,6 +249,7 @@ public class Locatario {
 					resposta = true;
 				}
 			}
+			
 
 		} else {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
