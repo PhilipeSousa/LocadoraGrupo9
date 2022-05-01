@@ -291,7 +291,83 @@ public class Veiculos {
 		return resposta;
 	}
 	
-	
+	public static void alterarVeiculo() {
+		Veiculos l = pesquisar_alt();
+		if (l != null && l instanceof Veiculos) {
+			Veiculos pf = (Veiculos) l;
+			String strEscolha = JOptionPane.showInputDialog("Digite: \n" 
+					+ "1 - Para alterar marca: \n"
+					+ "2 - Para alterar modelo: \n"
+					+ "3 - Para alterar Ano de fabricacao: \n"
+					+ "4 - Para alterar Ano do modelo: \n"
+					+ "5 - Para alterar Renavam: \n"
+					+ "6 - Para alterar Capacidade do tanque de combustivel: \n");
+
+			int escolha = Integer.parseInt(strEscolha);
+			if (escolha == 1) {
+				String marcaMod = JOptionPane.showInputDialog("Digite a nova marca: ");
+				l.setMarca(marcaMod);
+				JOptionPane.showMessageDialog(null, "marca alterado com sucesso!");
+			}
+			if (escolha == 2) {
+				String modelMod = JOptionPane.showInputDialog("Digite o novo modelo: ");
+				l.setModelo(modelMod);
+				JOptionPane.showMessageDialog(null, "email alterado com sucesso!");
+			}
+			if (escolha == 3) {
+				String anofMod = JOptionPane.showInputDialog("Digite o novo ano de fabricacao: ");
+				l.setAnoFabricacao(anofMod);
+				JOptionPane.showMessageDialog(null, "ano alterado com sucesso!");
+			}
+			if (escolha == 4) {
+				String anoMod = JOptionPane.showInputDialog("Digite o novo ano do modelo: ");
+				l.setAnoModelo(anoMod);
+				JOptionPane.showMessageDialog(null, "ano alterado com sucesso!");
+			}
+			if (escolha == 5) {
+				String renaMod = JOptionPane.showInputDialog("Digite o novo Renavam: ");
+				l.setRenavam(renaMod);
+				JOptionPane.showMessageDialog(null, "renavam alterado com sucesso!");
+			}
+			if (escolha == 6) {
+				String capMod = JOptionPane.showInputDialog("Digite o novo valor da Capacidade do tanque de combustivel: ");
+				float capT = Float.parseFloat(capMod);
+				l.setCapacidadeTanque(capT);
+				JOptionPane.showMessageDialog(null, "rua alterada com sucesso!");
+			}
+		}
+		
+	}
+
+	public static Veiculos pesquisar_alt() {
+		
+		int escolha = 1;
+		Veiculos vecPesquisado = null; 
+
+		if (escolha == 1) {
+			String rena = JOptionPane.showInputDialog("Digite o renavam do veiculo que deseja alterar: ");
+			
+
+			for (Veiculos l : cadastroVeiculos) {
+				if (l instanceof Veiculos) {
+					Veiculos pf = (Veiculos) l; 
+					if (l.getRenavam().equals(rena)) {
+						JOptionPane.showMessageDialog(null, "veiculo encontrado!");
+						vecPesquisado = l;
+					} 
+				} 
+			}
+		} 
+		try {
+			if (vecPesquisado == null) {
+				throw new ObjetoNaoEncontradoException("Objeto nao encontrado!");
+			}
+		} catch (ObjetoNaoEncontradoException ex) {
+			String msg = ex.getMessage();
+			System.out.println("Exception " + msg);
+		}
+		return vecPesquisado;
+	}
 
 }
 
