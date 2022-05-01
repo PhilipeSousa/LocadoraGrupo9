@@ -83,12 +83,39 @@ public class App {
                                     switch (opcao3) {
                                         case 'A': { // Cadastrar veiculo de passeio
                                             // Veiculos.cadastrarVeiculoPasseio();
+                                            String escolha = JOptionPane
+                                                .showInputDialog("Escolha:\nC- cadastrar Compacto\nL- cadastrar Compacto de Luxo\nS- cadastrar Suv\nD- Sedan");
+                                            if (escolha.equalsIgnoreCase("C")) {
+                                                Veiculos.cadastrarCompacto();
+
+                                            }else if (escolha.equalsIgnoreCase("L")) {
+                                                Veiculos.cadastrarCompactoLuxo();
+
+                                            }else if (escolha.equalsIgnoreCase("S")) {
+                                                Veiculos.cadastrarSuvs();
+
+                                            }else if (escolha.equalsIgnoreCase("D")) {
+                                                Veiculos.cadastrarSedan();
+
+                                            }else {
+                                                JOptionPane.showMessageDialog(null, "Valor errado");
+                                            }
+                                            
                                             break;
                                         }
 
                                         case 'B': { // Cadastrar veiculo utilitario
-                                            // Veiculos.cadastrarVeiculosUtilitarios(); // veiculo de carga ou
-                                            // passageiro
+                                            String escolha = JOptionPane
+                                                .showInputDialog("Escolha:\nC- cadastrar veiculo de Carga\nP- cadastrar veiculo de Passageiros");
+                                            if (escolha.equalsIgnoreCase("C")) {
+                                                Veiculos.cadastrarVeiculosCarga();
+
+                                            }else if (escolha.equalsIgnoreCase("P")) {
+                                                Veiculos.cadastrarVeiculosPassageiros();
+
+                                            }else{
+                                                
+                                            }
                                             break;
                                         }
 
@@ -135,6 +162,7 @@ public class App {
                             }
 
                             case 'C': { // Atualizar dados de um veiculo
+                                //Veiculos.alterarVeiculo();
                                 break;
                             }
 

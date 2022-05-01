@@ -326,4 +326,5 @@ public class Locatario {
 
 		return resposta;
 	}
+	
 }
