@@ -162,7 +162,7 @@ public class App {
                             }
 
                             case 'C': { // Atualizar dados de um veiculo
-                                //Veiculos.alterarVeiculo();
+                                Veiculos.alterarVeiculo();
                                 break;
                             }
 
