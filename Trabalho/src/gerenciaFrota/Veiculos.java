@@ -109,21 +109,75 @@ public class Veiculos {
 
 
 	public static void cadastrarMotocicleta() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
-		String modelo = JOptionPane.showInputDialog("Modelo: ");
+		boolean repeat = true;
+		String marca = "";
+		String modelo = "";
+		String renavam = "";
+
+		while(repeat == true){
+			try{
+				marca = JOptionPane.showInputDialog("Marca: ");
+				if (marca.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true; 
+		while(repeat == true){
+			try{
+				modelo = JOptionPane.showInputDialog("Modelo: ");
+				if (modelo.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabricacao: ");
-		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
-		String renavam = JOptionPane.showInputDialog("Renavam: ");
+		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");		
+		repeat = true; 
+		while(repeat == true){
+			try{
+				renavam = JOptionPane.showInputDialog("Renavam: ");
+				if (renavam.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		
 		String strCapacidadeTanque = JOptionPane.showInputDialog("Capacidade do tanque de combustivel: ");
 		float capacidadeTanque = Float.parseFloat(strCapacidadeTanque);
-		String strFreiosAbs = JOptionPane.showInputDialog("Possui freios Abs? ");
-		boolean freiosAbs = Boolean.parseBoolean(strFreiosAbs);
-		String strControleTracao = JOptionPane.showInputDialog("Possui controle de tracao? ");
-		boolean controleTracao = Boolean.parseBoolean(strControleTracao);
-		String strPilotoAutomatico = JOptionPane.showInputDialog("Possui piloto automatico? ");
-		boolean pilotoAutomatico = Boolean.parseBoolean(strPilotoAutomatico);
+		boolean freiosAbs = false;
+		boolean controleTracao = false;
+		boolean pilotoAutomatico = false;
+
+		int  strFreiosAbs = JOptionPane.showConfirmDialog(null,"Possui freios Abs? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strFreiosAbs == JOptionPane.YES_OPTION){
+			 freiosAbs = true;
+		}
+
+		int strControleTracao = JOptionPane.showConfirmDialog(null,"Possui controle de tracao? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strControleTracao == JOptionPane.YES_OPTION){
+			controleTracao = true;
+	   	}
+		int  strPilotoAutomatico = JOptionPane.showConfirmDialog(null,"Possui piloto automatico? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strPilotoAutomatico == JOptionPane.YES_OPTION){
+				pilotoAutomatico = true;
+		} 
 		String modoPilotagem = JOptionPane.showInputDialog("Modo de pilotagem: ");
 		Motocicletas moto = new Motocicletas(marca, modelo, anoFabricacao, anoModelo,
 				renavam, capacidadeTanque, freiosAbs, controleTracao, pilotoAutomatico, modoPilotagem);
@@ -131,31 +185,128 @@ public class Veiculos {
 	}
 
 	public static void cadastrarVeiculosPassageiros() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
-		String modelo = JOptionPane.showInputDialog("Modelo: ");
+		boolean repeat = true;
+		String marca = "";
+		String modelo = "";
+		String renavam = "";
+
+		while(repeat == true){
+			try{
+				marca = JOptionPane.showInputDialog("Marca: ");
+				if (marca.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true; 
+		while(repeat == true){
+			try{
+				modelo = JOptionPane.showInputDialog("Modelo: ");
+				if (modelo.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabricacao: ");
-		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
-		String renavam = JOptionPane.showInputDialog("Renavam: ");
+		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");		
+		repeat = true; 
+		while(repeat == true){
+			try{
+				renavam = JOptionPane.showInputDialog("Renavam: ");
+				if (renavam.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		String strCapacidadeTanque = JOptionPane.showInputDialog("Capacidade do tanque de combustivel: ");
 		float capacidadeTanque = Float.parseFloat(strCapacidadeTanque);
 		//String numeroOcupantes = JOptionPane.showInputDialog("Numero de ocupantes: ");
-		String strArCondicionado = JOptionPane.showInputDialog("Possui ar-condicionado? ");
-		boolean arCondicionado = Boolean.parseBoolean(strArCondicionado);
-		String strDirecaoHidraulica = JOptionPane.showInputDialog("Possui direcao hidraulica? ");
-		boolean direcaoHidraulica = Boolean.parseBoolean(strDirecaoHidraulica);
-		String strTv = JOptionPane.showInputDialog("Pssui tv? ");
-		boolean tv = Boolean.parseBoolean(strTv);
+		boolean arCondicionado    = false;
+		boolean direcaoHidraulica = false;
+		boolean tv  = false;
+		int strArCondicionado = JOptionPane.showConfirmDialog(null,"Possui ar-condicionado? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strArCondicionado == JOptionPane.YES_OPTION){
+			 arCondicionado = true;
+		}
+		int strDirecaoHidraulica = JOptionPane.showConfirmDialog(null,"Possui direcao hidraulica? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strDirecaoHidraulica == JOptionPane.YES_OPTION){
+			 direcaoHidraulica = true;
+		}
+		int strTv = JOptionPane.showConfirmDialog(null,"Possui tv? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strTv == JOptionPane.YES_OPTION){
+			tv = true;
+		}
 		VeiculosPassageiros veicPas = new VeiculosPassageiros(marca, modelo, anoFabricacao, anoModelo, renavam,
 				capacidadeTanque, arCondicionado, direcaoHidraulica, tv);
 		cadastrarVeiculo(veicPas);
 	}
 
 	public static void cadastrarVeiculosCarga() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
-		String modelo = JOptionPane.showInputDialog("Modelo: ");
+		boolean repeat = true;
+		String marca = "";
+		String modelo = "";
+		String renavam = "";
+
+		while(repeat == true){
+			try{
+				marca = JOptionPane.showInputDialog("Marca: ");
+				if (marca.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true; 
+		while(repeat == true){
+			try{
+				modelo = JOptionPane.showInputDialog("Modelo: ");
+				if (modelo.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabricacao: ");
-		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
-		String renavam = JOptionPane.showInputDialog("Renavam: ");
+		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");		
+		repeat = true; 
+		while(repeat == true){
+			try{
+				renavam = JOptionPane.showInputDialog("Renavam: ");
+				if (renavam.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		String strCapacidadeTanque = JOptionPane.showInputDialog("Capacidade do tanque de combustivel: ");
 		float capacidadeTanque = Float.parseFloat(strCapacidadeTanque);
 		String strTaraVeiculo = JOptionPane.showInputDialog("Tara do veiculo: ");
@@ -170,76 +321,290 @@ public class Veiculos {
 	}
 
 	public static void cadastrarCompactoLuxo() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
-		String modelo = JOptionPane.showInputDialog("Modelo: ");
+		boolean repeat = true;
+		String marca = "";
+		String modelo = "";
+		String renavam = "";
+
+		while(repeat == true){
+			try{
+				marca = JOptionPane.showInputDialog("Marca: ");
+				if (marca.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true; 
+		while(repeat == true){
+			try{
+				modelo = JOptionPane.showInputDialog("Modelo: ");
+				if (modelo.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabricacao: ");
-		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
-		String renavam = JOptionPane.showInputDialog("Renavam: ");
+		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");		
+		repeat = true; 
+		while(repeat == true){
+			try{
+				renavam = JOptionPane.showInputDialog("Renavam: ");
+				if (renavam.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		String strCapacidadeTanque = JOptionPane.showInputDialog("Capacidade do tanque de combustivel: ");
 		float capacidadeTanque = Float.parseFloat(strCapacidadeTanque);
-		String strArCondicionado = JOptionPane.showInputDialog("Possui ar-condicionado? ");
-		boolean arCondicionado = Boolean.parseBoolean(strArCondicionado); 
-		String strDirecaoHidraulica = JOptionPane.showInputDialog("Possui direcao hidraulica? ");
-		boolean direcaoHidraulica = Boolean.parseBoolean(strDirecaoHidraulica);
-		String strCambioAutomatico = JOptionPane.showInputDialog("Possui cambio automatico? ");
-		boolean cambioAutomatico = Boolean.parseBoolean(strCambioAutomatico);
+		boolean arCondicionado    = false;
+		boolean direcaoHidraulica = false;
+		boolean cambioAutomatico  = false;
+		int strArCondicionado = JOptionPane.showConfirmDialog(null,"Possui ar-condicionado? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strArCondicionado == JOptionPane.YES_OPTION){
+			 arCondicionado = true;
+		}
+		int strDirecaoHidraulica = JOptionPane.showConfirmDialog(null,"Possui direcao hidraulica? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strDirecaoHidraulica == JOptionPane.YES_OPTION){
+			 direcaoHidraulica = true;
+		}
+		int strCambioAutomatico = JOptionPane.showConfirmDialog(null, "Possui cambio Automatico? ", "Cadastro", JOptionPane.YES_OPTION);
+		if (strCambioAutomatico == JOptionPane.YES_OPTION){
+			cambioAutomatico = true;
+	   }
 		CompactoLuxo compLuxo = new CompactoLuxo(marca, modelo, anoFabricacao,
 				anoModelo, renavam, capacidadeTanque, arCondicionado, direcaoHidraulica, cambioAutomatico);
 		cadastrarVeiculo(compLuxo); 
 	}
 
 	public static void cadastrarCompacto() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
-		String modelo = JOptionPane.showInputDialog("Modelo: ");
+		boolean repeat = true;
+		String marca = "";
+		String modelo = "";
+		String renavam = "";
+
+		while(repeat == true){
+			try{
+				marca = JOptionPane.showInputDialog("Marca: ");
+				if (marca.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true; 
+		while(repeat == true){
+			try{
+				modelo = JOptionPane.showInputDialog("Modelo: ");
+				if (modelo.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabricacao: ");
-		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
-		String renavam = JOptionPane.showInputDialog("Renavam: ");
+		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");		
+		repeat = true; 
+		while(repeat == true){
+			try{
+				renavam = JOptionPane.showInputDialog("Renavam: ");
+				if (renavam.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		String strCapacidadeTanque = JOptionPane.showInputDialog("Capacidade do tanque de combustivel: ");
 		float capacidadeTanque = Float.parseFloat(strCapacidadeTanque);
-		String strArCondicionado = JOptionPane.showInputDialog("Possui ar-condicionado? ");
-		boolean arCondicionado = Boolean.parseBoolean(strArCondicionado);
-		String strDirecaoHidraulica = JOptionPane.showInputDialog("Possui direcao hidraulica? ");
-		boolean direcaoHidraulica = Boolean.parseBoolean(strDirecaoHidraulica);
-		String strCambioAutomatico = JOptionPane.showInputDialog("Possui cambio Automatico? ");
-		boolean cambioAutomatico = Boolean.parseBoolean(strCambioAutomatico);
+		boolean arCondicionado    = false;
+		boolean direcaoHidraulica = false;
+		boolean cambioAutomatico  = false;
+		int strArCondicionado = JOptionPane.showConfirmDialog(null,"Possui ar-condicionado? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strArCondicionado == JOptionPane.YES_OPTION){
+			 arCondicionado = true;
+		}
+		int strDirecaoHidraulica = JOptionPane.showConfirmDialog(null,"Possui direcao hidraulica? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strDirecaoHidraulica == JOptionPane.YES_OPTION){
+			 direcaoHidraulica = true;
+		}
+		int strCambioAutomatico = JOptionPane.showConfirmDialog(null, "Possui cambio Automatico? ", "Cadastro", JOptionPane.YES_OPTION);
+		if (strCambioAutomatico == JOptionPane.YES_OPTION){
+			cambioAutomatico = true;
+	   }
 		Compacto comp = new Compacto(marca, modelo, anoFabricacao, anoModelo,
 				renavam, capacidadeTanque, arCondicionado, direcaoHidraulica, cambioAutomatico);
 		cadastrarVeiculo(comp);
 	}
 
 	public static void cadastrarSuvs() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
-		String modelo = JOptionPane.showInputDialog("Modelo: ");
+		boolean repeat = true;
+		String marca = "";
+		String modelo = "";
+		String renavam = "";
+
+		while(repeat == true){
+			try{
+				marca = JOptionPane.showInputDialog("Marca: ");
+				if (marca.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true; 
+		while(repeat == true){
+			try{
+				modelo = JOptionPane.showInputDialog("Modelo: ");
+				if (modelo.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabricacao: ");
-		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
-		String renavam = JOptionPane.showInputDialog("Renavam: ");
+		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");		
+		repeat = true; 
+		while(repeat == true){
+			try{
+				renavam = JOptionPane.showInputDialog("Renavam: ");
+				if (renavam.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		String strCapacidadeTanque = JOptionPane.showInputDialog("Capacidade do tanque de combustivel: ");
 		float capacidadeTanque = Float.parseFloat(strCapacidadeTanque);
-		String strArCondicionado = JOptionPane.showInputDialog("Possui ar-condicionado? ");
-		boolean arCondicionado = Boolean.parseBoolean(strArCondicionado);
-		String strDirecaoHidraulica = JOptionPane.showInputDialog("Possui direcao hidraulica? ");
-		boolean direcaoHidraulica = Boolean.parseBoolean(strDirecaoHidraulica);
-		String strCambioAutomatico = JOptionPane.showInputDialog("Possui cambio Automatico? ");
-		boolean cambioAutomatico = Boolean.parseBoolean(strCambioAutomatico);
+
+		boolean arCondicionado    = false;
+		boolean direcaoHidraulica = false;
+		boolean cambioAutomatico  = false;
+		int strArCondicionado = JOptionPane.showConfirmDialog(null,"Possui ar-condicionado? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strArCondicionado == JOptionPane.YES_OPTION){
+			 arCondicionado = true;
+		}
+		int strDirecaoHidraulica = JOptionPane.showConfirmDialog(null,"Possui direcao hidraulica? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strDirecaoHidraulica == JOptionPane.YES_OPTION){
+			 direcaoHidraulica = true;
+		}
+		int strCambioAutomatico = JOptionPane.showConfirmDialog(null, "Possui cambio Automatico? ", "Cadastro", JOptionPane.YES_OPTION);
+		if (strCambioAutomatico == JOptionPane.YES_OPTION){
+			cambioAutomatico = true;
+	   }
+		
 		Suvs suv = new Suvs(marca, modelo, anoFabricacao, anoModelo, renavam,
 				capacidadeTanque, arCondicionado, direcaoHidraulica, cambioAutomatico);
 		cadastrarVeiculo(suv);
 	}
 
 	public static void cadastrarSedan() {
-		String marca = JOptionPane.showInputDialog("Marca: ");
-		String modelo = JOptionPane.showInputDialog("Modelo: ");
+		boolean repeat = true;
+		String marca = "";
+		String modelo = "";
+		String renavam = "";
+
+		while(repeat == true){
+			try{
+				marca = JOptionPane.showInputDialog("Marca: ");
+				if (marca.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		repeat = true; 
+		while(repeat == true){
+			try{
+				modelo = JOptionPane.showInputDialog("Modelo: ");
+				if (modelo.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
+		
 		String anoFabricacao = JOptionPane.showInputDialog("Ano de fabricacao: ");
-		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");
-		String renavam = JOptionPane.showInputDialog("Renavam: ");
+		String anoModelo = JOptionPane.showInputDialog("Ano do modelo: ");		
+		repeat = true; 
+		while(repeat == true){
+			try{
+				renavam = JOptionPane.showInputDialog("Renavam: ");
+				if (renavam.equals(""))
+					throw new CampoEmBrancoException(" - Campo em Branco");
+				repeat = false; 
+				
+			} catch (CampoEmBrancoException e){
+				String msg = "CampoEmBrancoException" + e.getMessage();
+				JOptionPane.showMessageDialog(null, msg);
+				repeat = true;
+			}	
+		}
 		String strCapacidadeTanque = JOptionPane.showInputDialog("Capacidade do tanque de combustivel: ");
 		float capacidadeTanque = Float.parseFloat(strCapacidadeTanque);		 
-		String strArCondicionado = JOptionPane.showInputDialog("Possui ar-condicionado? ");
-		boolean arCondicionado = Boolean.parseBoolean(strArCondicionado);
-		String strDirecaoHidraulica = JOptionPane.showInputDialog("Possui direcao hidraulica? ");
-		boolean direcaoHidraulica = Boolean.parseBoolean(strDirecaoHidraulica);
-		String strCambioAutomatico = JOptionPane.showInputDialog("Possui cambio Automatico? ");
-		boolean cambioAutomatico = Boolean.parseBoolean(strCambioAutomatico);
+		boolean arCondicionado    = false;
+		boolean direcaoHidraulica = false;
+		boolean cambioAutomatico  = false;
+		int strArCondicionado = JOptionPane.showConfirmDialog(null,"Possui ar-condicionado? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strArCondicionado == JOptionPane.YES_OPTION){
+			 arCondicionado = true;
+		}
+		int strDirecaoHidraulica = JOptionPane.showConfirmDialog(null,"Possui direcao hidraulica? ","Cadastro" ,JOptionPane.YES_NO_OPTION);
+		if (strDirecaoHidraulica == JOptionPane.YES_OPTION){
+			 direcaoHidraulica = true;
+		}
+		int strCambioAutomatico = JOptionPane.showConfirmDialog(null, "Possui cambio Automatico? ", "Cadastro", JOptionPane.YES_OPTION);
+		if (strCambioAutomatico == JOptionPane.YES_OPTION){
+			cambioAutomatico = true;
+	   }
 		Sedan sed = new Sedan(marca, modelo, anoFabricacao, anoModelo, renavam,
 				capacidadeTanque, arCondicionado, direcaoHidraulica, cambioAutomatico);
 		cadastrarVeiculo(sed);
@@ -262,8 +627,13 @@ public class Veiculos {
 			}
 		}
 
-		if (resposta == false) {
-			JOptionPane.showMessageDialog(null, "Nao Encontrado");
+		try {
+			if (resposta == false) {
+				throw new ObjetoNaoEncontradoException(" - Objeto nao encontrado!");
+			}
+		} catch (ObjetoNaoEncontradoException e) {
+			String msg =  "ObjetoNaoEncontradoException" + e.getMessage();
+			JOptionPane.showMessageDialog(null, msg);
 		}
 
 		return resposta;
@@ -307,7 +677,7 @@ public class Veiculos {
 			if (escolha == 1) {
 				String marcaMod = JOptionPane.showInputDialog("Digite a nova marca: ");
 				l.setMarca(marcaMod);
-				JOptionPane.showMessageDialog(null, "marca alterado com sucesso!");
+				JOptionPane.showMessageDialog(null, "marca alterada com sucesso!");
 			}
 			if (escolha == 2) {
 				String modelMod = JOptionPane.showInputDialog("Digite o novo modelo: ");
@@ -330,10 +700,10 @@ public class Veiculos {
 				JOptionPane.showMessageDialog(null, "renavam alterado com sucesso!");
 			}
 			if (escolha == 6) {
-				String capMod = JOptionPane.showInputDialog("Digite o novo valor da Capacidade do tanque de combustivel: ");
+				String capMod = JOptionPane.showInputDialog("Digite a nova Capacidade do tanque de combustivel: ");
 				float capT = Float.parseFloat(capMod);
 				l.setCapacidadeTanque(capT);
-				JOptionPane.showMessageDialog(null, "rua alterada com sucesso!");
+				JOptionPane.showMessageDialog(null, "alterada com sucesso!");
 			}
 		}
 		
@@ -358,14 +728,6 @@ public class Veiculos {
 				} 
 			}
 		} 
-		try {
-			if (vecPesquisado == null) {
-				throw new ObjetoNaoEncontradoException("Objeto nao encontrado!");
-			}
-		} catch (ObjetoNaoEncontradoException ex) {
-			String msg = ex.getMessage();
-			System.out.println("Exception " + msg);
-		}
 		return vecPesquisado;
 	}
 
