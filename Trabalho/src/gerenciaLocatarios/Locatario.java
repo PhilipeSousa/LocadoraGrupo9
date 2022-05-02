@@ -47,7 +47,6 @@ public class Locatario {
 
 	public static boolean cadastrarLocatario(PessoaFisica pf, PessoaJuridica pj, String escolha) {
 		boolean resposta = false;
-		String cnpjPesquisa = null;
 
 		if (escolha.equals("F")) {
 			resposta = pfs.add(pf);
