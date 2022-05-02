@@ -71,8 +71,9 @@ public class Veiculos {
 
 	private static void cadastrarVeiculo(Veiculos veic) {
 		boolean adicionou = cadastroVeiculos.add(veic);
-		if (adicionou)
+		if (adicionou) {
 			JOptionPane.showMessageDialog(null, "Veiculo cadastrado com sucesso!");
+		}
 	}
 	
 	public static boolean removerVeiculo() {
