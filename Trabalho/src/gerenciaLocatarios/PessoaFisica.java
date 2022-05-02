@@ -9,8 +9,8 @@ public class PessoaFisica extends Locatario {
 		this.nomeCompleto = nomeCompleto2;
 		this.estadoCivil = estadoCivil2;
 		this.cpf = cpf2;
-		this.email = email;
-		this.celular = celular;
+		Locatario.email = email;
+		Locatario.celular = celular;
 	}
 
 	public String getNomeCompleto() {

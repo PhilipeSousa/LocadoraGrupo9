@@ -10,19 +10,19 @@ public class Locatario {
 	Endereco endereco;
 	static List<PessoaFisica> pfs = new LinkedList<PessoaFisica>();
 	static List<PessoaJuridica> pjs = new LinkedList<PessoaJuridica>();
-	private static String nomeCompleto2;
-	private static String estadoCivil2;
-	private static String cpf2;
+	protected static String nomeCompleto2;
+	protected static String estadoCivil2;
+	protected static String cpf2;
 	static PessoaFisica pf = new PessoaFisica(nomeCompleto2, estadoCivil2, cpf2, email, celular);
-	private static String nome;
-	private static String estadoCivil;
-	private static String cidade1;
-	private static String estado1;
-	private static String rua1;
-	private static String complemento1;
-	private static String bairro1;
-	private static String cep1;
-	private static int numero1;
+	protected static String nome;
+	protected static String estadoCivil;
+	protected static String cidade1;
+	protected static String estado1;
+	protected static String rua1;
+	protected static String complemento1;
+	protected static String bairro1;
+	protected static String cep1;
+	protected static int numero1;
 	private static int valor = 0;
 
 	private static String cnpjPJ2;
@@ -47,6 +47,7 @@ public class Locatario {
 
 	public static boolean cadastrarLocatario(PessoaFisica pf, PessoaJuridica pj, String escolha) {
 		boolean resposta = false;
+		String cnpjPesquisa = null;
 
 		if (escolha.equals("F")) {
 			resposta = pfs.add(pf);
@@ -55,6 +56,7 @@ public class Locatario {
 		} else if (escolha.equals("J")) {
 			resposta = pjs.add(pj);
 			JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+
 		} else {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
 		}
@@ -62,38 +64,57 @@ public class Locatario {
 		return resposta;
 	}
 
+	public static boolean cadastrarFuncionarioLocatario(PessoaFisica pfDePJ) {
+		boolean resposta = false;
+		String cnpjPesquisa = null;
+
+		cnpjPesquisa = JOptionPane.showInputDialog(null, "Digite o CNPJ da empresa: ");
+
+		for (PessoaJuridica pj : pjs) {
+			if (pj.getCnpjPJ().equals(cnpjPesquisa)) {
+				JOptionPane.showMessageDialog(null, "Encontrado cadastro:\nRazao Social: " + pj.getRazaoSocial() +
+						"\nCNPJ: " + pj.getCnpjPJ());
+				resposta = PessoaJuridica.pfsDePJs.add(pfDePJ);
+				JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+			} else {
+				JOptionPane.showMessageDialog(null, "Nao cadastrado");
+			}
+		}
+
+		return resposta;
+	}
+
 	public static void cadastrarPessoaFisica() {
 		boolean repeat = true;
-		
 
-		while(repeat == true){
-			try{
+		while (repeat == true) {
+			try {
 				Locatario.nome = JOptionPane.showInputDialog("Nome: ");
 				if (Locatario.nome.equals(""))
 					throw new CampoEmBrancoException(" - Campo em Branco");
-				repeat = false; 
-				
-			} catch (CampoEmBrancoException e){
+				repeat = false;
+
+			} catch (CampoEmBrancoException e) {
 				String msg = "CampoEmBrancoException" + e.getMessage();
 				JOptionPane.showMessageDialog(null, msg);
 				repeat = true;
-			}	
+			}
 		}
 		repeat = true;
 		Locatario.estadoCivil = JOptionPane.showInputDialog("Estado Civil: ");
-		
-		while(repeat == true){
-			try{
+
+		while (repeat == true) {
+			try {
 				Locatario.cpf2 = JOptionPane.showInputDialog("CPF: ");
 				if (Locatario.cpf2.equals(""))
 					throw new CampoEmBrancoException(" - Campo em Branco");
 				repeat = false;
-				
-			} catch (CampoEmBrancoException e){
+
+			} catch (CampoEmBrancoException e) {
 				String msg = "CampoEmBrancoException" + e.getMessage();
 				JOptionPane.showMessageDialog(null, msg);
 				repeat = true;
-			}	
+			}
 		}
 		Locatario.email = JOptionPane.showInputDialog("E-mail: ");
 		Locatario.celular = JOptionPane.showInputDialog("celular: ");
@@ -113,33 +134,33 @@ public class Locatario {
 	public static void cadastrarPessoaJuridica() {
 		boolean repeat = true;
 
-		while(repeat == true){
-			try{
+		while (repeat == true) {
+			try {
 				Locatario.cnpjPJ2 = JOptionPane.showInputDialog("CNPJ: ");
 				if (Locatario.cnpjPJ2.equals(""))
 					throw new CampoEmBrancoException(" - Campo em Branco");
 				repeat = false;
-				
-			} catch (CampoEmBrancoException e){
+
+			} catch (CampoEmBrancoException e) {
 				String msg = "CampoEmBrancoException" + e.getMessage();
 				JOptionPane.showMessageDialog(null, msg);
 				repeat = true;
-			}	
+			}
 		}
 		repeat = true;
 		Locatario.razaoSocial2 = JOptionPane.showInputDialog("Nome social: ");
-		Locatario.email = JOptionPane.showInputDialog("E-mail: ");
-		while(repeat == true){
-			try{
+
+		while (repeat == true) {
+			try {
 				Locatario.email = JOptionPane.showInputDialog("E-mail: ");
 				if (Locatario.email.equals(""))
 					throw new CampoEmBrancoException(" - Campo em Branco");
 				repeat = false;
-			} catch (CampoEmBrancoException e){
+			} catch (CampoEmBrancoException e) {
 				String msg = "CampoEmBrancoException" + e.getMessage();
 				JOptionPane.showMessageDialog(null, msg);
 				repeat = true;
-			}	
+			}
 		}
 		Locatario.celular = JOptionPane.showInputDialog("celular: ");
 		pj = new PessoaJuridica(cnpjPJ2, razaoSocial2, email, celular);
@@ -219,8 +240,14 @@ public class Locatario {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
 		}
 
-		if (resposta == false) {
-			JOptionPane.showMessageDialog(null, "Nao Encontrado");
+		try {
+			if (resposta == false) {
+				throw new ObjetoNaoEncontradoException(" - Objeto nao encontrado");
+			}
+
+		} catch (ObjetoNaoEncontradoException e) {
+			String msg = "ObjetoNaoEncontradoException" + e.getMessage();
+			JOptionPane.showMessageDialog(null, msg);
 		}
 
 		return resposta;
@@ -228,7 +255,6 @@ public class Locatario {
 
 	public static boolean pesquisarLocatario(String escolha) {
 		boolean resposta = false;
-		
 
 		if (escolha.equalsIgnoreCase("F")) {
 			String esc = JOptionPane.showInputDialog(null, "Buscar por nome, cpf, ou email:");
@@ -249,22 +275,21 @@ public class Locatario {
 					resposta = true;
 				}
 			}
-			
 
 		} else {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
 		}
 
-		try{
+		try {
 			if (resposta == false) {
 				throw new ObjetoNaoEncontradoException(" - Objeto nao encontrado");
 			}
-			
-		} catch (ObjetoNaoEncontradoException e){
+
+		} catch (ObjetoNaoEncontradoException e) {
 			String msg = "ObjetoNaoEncontradoException" + e.getMessage();
-			JOptionPane.showMessageDialog(null, msg);	
-		}	
-		
+			JOptionPane.showMessageDialog(null, msg);
+		}
+
 		return resposta;
 	}
 
@@ -320,11 +345,16 @@ public class Locatario {
 			JOptionPane.showMessageDialog(null, "Valor invalido");
 		}
 
-		if (resposta == false) {
-			JOptionPane.showMessageDialog(null, "Nao Encontrado");
+		try {
+			if (resposta == false) {
+				throw new ObjetoNaoEncontradoException(" - Objeto nao encontrado");
+			}
+
+		} catch (ObjetoNaoEncontradoException e) {
+			String msg = "ObjetoNaoEncontradoException" + e.getMessage();
+			JOptionPane.showMessageDialog(null, msg);
 		}
 
 		return resposta;
 	}
-	
 }

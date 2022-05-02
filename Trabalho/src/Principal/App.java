@@ -31,13 +31,16 @@ public class App {
                         switch (opcao1) {
                             case 'A': { // Cadastrar locatario
                                 String escolha = JOptionPane
-                                        .showInputDialog("Escolha:\nF- cadastrar PF\nJ- cadastrar PJ");
+                                        .showInputDialog(
+                                                "Escolha:\nF- cadastrar PF\nJ- cadastrar PJ\nP- cadastrar funcionario");
                                 if (escolha.equalsIgnoreCase("F")) {
                                     Locatario.cadastrarPessoaFisica();
 
                                 } else if (escolha.equalsIgnoreCase("J")) {
                                     Locatario.cadastrarPessoaJuridica();
 
+                                } else if (escolha.equalsIgnoreCase("P")) {
+                                    PessoaJuridica.cadastrarFuncionario();
                                 } else {
                                     JOptionPane.showMessageDialog(null, "Valor errado");
                                 }
@@ -84,37 +87,39 @@ public class App {
                                         case 'A': { // Cadastrar veiculo de passeio
                                             // Veiculos.cadastrarVeiculoPasseio();
                                             String escolha = JOptionPane
-                                                .showInputDialog("Escolha:\nC- cadastrar Compacto\nL- cadastrar Compacto de Luxo\nS- cadastrar Suv\nD- Sedan");
+                                                    .showInputDialog(
+                                                            "Escolha:\nC- cadastrar Compacto\nL- cadastrar Compacto de Luxo\nS- cadastrar Suv\nD- Sedan");
                                             if (escolha.equalsIgnoreCase("C")) {
                                                 Veiculos.cadastrarCompacto();
 
-                                            }else if (escolha.equalsIgnoreCase("L")) {
+                                            } else if (escolha.equalsIgnoreCase("L")) {
                                                 Veiculos.cadastrarCompactoLuxo();
 
-                                            }else if (escolha.equalsIgnoreCase("S")) {
+                                            } else if (escolha.equalsIgnoreCase("S")) {
                                                 Veiculos.cadastrarSuvs();
 
-                                            }else if (escolha.equalsIgnoreCase("D")) {
+                                            } else if (escolha.equalsIgnoreCase("D")) {
                                                 Veiculos.cadastrarSedan();
 
-                                            }else {
+                                            } else {
                                                 JOptionPane.showMessageDialog(null, "Valor errado");
                                             }
-                                            
+
                                             break;
                                         }
 
                                         case 'B': { // Cadastrar veiculo utilitario
                                             String escolha = JOptionPane
-                                                .showInputDialog("Escolha:\nC- cadastrar veiculo de Carga\nP- cadastrar veiculo de Passageiros");
+                                                    .showInputDialog(
+                                                            "Escolha:\nC- cadastrar veiculo de Carga\nP- cadastrar veiculo de Passageiros");
                                             if (escolha.equalsIgnoreCase("C")) {
                                                 Veiculos.cadastrarVeiculosCarga();
 
-                                            }else if (escolha.equalsIgnoreCase("P")) {
+                                            } else if (escolha.equalsIgnoreCase("P")) {
                                                 Veiculos.cadastrarVeiculosPassageiros();
 
-                                            }else{
-                                                
+                                            } else {
+
                                             }
                                             break;
                                         }
@@ -185,15 +190,19 @@ public class App {
                 case 'C': { // Gerenciar Reservas+
                     JOptionPane.showMessageDialog(null, "Gerenciar Reservas");
                     String escolha = JOptionPane
-                                        .showInputDialog("Escolha:\nF- cadastrar reserva\nJ- para pesquisar reserva");
-                                    if (escolha.equalsIgnoreCase("F")) {
-                                        Reserva.cadReserva();
+                            .showInputDialog(
+                                    "Escolha:\nC- cadastrar reserva\nP- para pesquisar reserva\nA- Alterar reserva\nE- Excluir reserva");
+                    if (escolha.equalsIgnoreCase("C")) {
+                        Reserva.cadReserva();
 
-                                    } else if (escolha.equalsIgnoreCase("J")) {
-                                        Reserva.pesquisarReserva();
-                                    }
-                    
-        
+                    } else if (escolha.equalsIgnoreCase("P")) {
+                        Reserva.pesquisarReserva();
+                    } else if (escolha.equalsIgnoreCase("A")) {
+                        Reserva.alterarReserva();
+                    } else if (escolha.equalsIgnoreCase("E")) {
+                        Reserva.removerReserva();
+                    }
+
                     break;
                 }
 
