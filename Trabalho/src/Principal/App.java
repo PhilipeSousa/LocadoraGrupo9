@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 import gerenciaLocatarios.*;
 import gerenciaFrota.*;
-// import gerenciaReservas.*;
+import gerenciaReservas.*;
 
 public class App {
     static String nomeLocadora = "LOCADORA NOTA 10";
@@ -184,6 +184,16 @@ public class App {
 
                 case 'C': { // Gerenciar Reservas+
                     JOptionPane.showMessageDialog(null, "Gerenciar Reservas");
+                    String escolha = JOptionPane
+                                        .showInputDialog("Escolha:\nF- cadastrar reserva\nJ- para pesquisar reserva");
+                                    if (escolha.equalsIgnoreCase("F")) {
+                                        Reserva.cadReserva();
+
+                                    } else if (escolha.equalsIgnoreCase("J")) {
+                                        Reserva.pesquisarReserva();
+                                    }
+                    
+        
                     break;
                 }
 
